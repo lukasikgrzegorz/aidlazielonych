@@ -9,6 +9,17 @@ npm install
 npm run dev
 ```
 
+## 🌐 Deployment
+
+Projekt automatycznie deployuje się na GitHub Pages przy każdym push do branch `main`.
+
+URL produkcyjny: https://grzegorzkrukowski.github.io/aidlazielonych/
+
+### Ręczny deployment lokalny
+```bash
+npm run build:gh-pages
+```
+
 ## � Struktura projektu
 
 ```

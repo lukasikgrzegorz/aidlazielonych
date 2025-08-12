@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "build:gh-pages": "astro build --outDir dist --base /aidlazielonych/",
     "astro": "astro"
   },
   "dependencies": {
