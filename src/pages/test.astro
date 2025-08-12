@@ -334,9 +334,105 @@ import Layout from '../layouts/Layout.astro';
         return;
       }
       
-      // Tu będzie logika generowania PDF
-      // Na razie pokazujemy alert
-      alert(`Gratulacje ${name}! W pełnej wersji tutaj zostałby wygenerowany certyfikat PDF.`);
+      // Generowanie certyfikatu jako obraz Canvas
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      if (!ctx) return;
+      
+      canvas.width = 1200;
+      canvas.height = 800;
+      
+      // Gradient tło
+      const gradient = ctx.createLinearGradient(0, 0, 1200, 800);
+      gradient.addColorStop(0, '#f0fdf4');
+      gradient.addColorStop(1, '#ecfdf5');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 1200, 800);
+      
+      // Ramka
+      ctx.strokeStyle = '#059669';
+      ctx.lineWidth = 8;
+      ctx.strokeRect(40, 40, 1120, 720);
+      
+      // Wewnętrzna ramka
+      ctx.strokeStyle = '#34d399';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(60, 60, 1080, 680);
+      
+      // Nagłówek
+      ctx.fillStyle = '#065f46';
+      ctx.font = 'bold 48px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('🏆 CERTYFIKAT UKOŃCZENIA', 600, 150);
+      
+      // Nazwa kursu
+      ctx.fillStyle = '#059669';
+      ctx.font = 'bold 36px Arial';
+      ctx.fillText('AI DLA ZIELONYCH', 600, 220);
+      
+      // Potwierdzenie
+      ctx.fillStyle = '#374151';
+      ctx.font = '24px Arial';
+      ctx.fillText('Niniejszym poświadcza się, że', 600, 300);
+      
+      // Imię i nazwisko
+      ctx.fillStyle = '#059669';
+      ctx.font = 'bold 42px Arial';
+      ctx.fillText(name.toUpperCase(), 600, 380);
+      
+      // Opis
+      ctx.fillStyle = '#374151';
+      ctx.font = '20px Arial';
+      ctx.fillText('pomyślnie ukończył/ukończyła kurs podstaw sztucznej inteligencji', 600, 450);
+      ctx.fillText('uzyskując 100% poprawnych odpowiedzi w teście końcowym', 600, 480);
+      
+      // Data
+      const currentDate = new Date().toLocaleDateString('pl-PL', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      ctx.fillStyle = '#6b7280';
+      ctx.font = '18px Arial';
+      ctx.fillText(`${currentDate}`, 600, 580);
+      
+      // Podpis
+      ctx.fillStyle = '#059669';
+      ctx.font = 'italic 16px Arial';
+      ctx.fillText('AI dla Zielonych - Kurs podstaw sztucznej inteligencji', 600, 650);
+      
+      // Unikalne ID certyfikatu
+      const certificateId = 'AZ-' + Date.now().toString(36).toUpperCase();
+      ctx.fillStyle = '#9ca3af';
+      ctx.font = '12px Arial';
+      ctx.textAlign = 'right';
+      ctx.fillText(`ID certyfikatu: ${certificateId}`, 1140, 740);
+      
+      // Pobieranie certyfikatu
+      const link = document.createElement('a');
+      link.download = `certyfikat-ai-dla-zielonych-${name.replace(/\s+/g, '-').toLowerCase()}.png`;
+      link.href = canvas.toDataURL('image/png', 1.0);
+      
+      // Dodaj feedback dla użytkownika
+      const generateBtn = document.getElementById('generate-certificate');
+      if (generateBtn) {
+        generateBtn.textContent = '⏳ Generowanie...';
+        generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+      
+      // Symulacja krótkiego opóźnienia dla lepszego UX
+      setTimeout(() => {
+        link.click();
+        
+        if (generateBtn) {
+          generateBtn.textContent = '✅ Certyfikat pobrany!';
+          setTimeout(() => {
+            generateBtn.textContent = '🏆 Wygeneruj certyfikat PDF';
+            generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          }, 2000);
+        }
+      }, 500);
     }
     
     // Event listeners
