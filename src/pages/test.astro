@@ -1,0 +1,365 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Test końcowy - AI dla Zielonych" description="Sprawdź swoją wiedzę o sztucznej inteligencji i otrzymaj certyfikat ukończenia kursu.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        📝 Test końcowy
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Sprawdź swoją wiedzę z kursu "AI dla Zielonych". Aby otrzymać certyfikat, musisz uzyskać 100% poprawnych odpowiedzi.
+      </p>
+    </div>
+
+    <!-- Info panel -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">ℹ️</span>
+        <div>
+          <h2 class="font-semibold text-blue-800 mb-2">Informacje o teście</h2>
+          <ul class="text-blue-700 text-sm space-y-1">
+            <li>• Test składa się z 10 pytań jednokrotnego wyboru</li>
+            <li>• Do zaliczenia wymagane jest 100% poprawnych odpowiedzi</li>
+            <li>• Możesz podejść do testu wielokrotnie</li>
+            <li>• Wynik zostanie pokazany natychmiast po zakończeniu</li>
+            <li>• Po zaliczeniu będziesz mógł pobrać certyfikat PDF</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Test container -->
+    <div id="test-container" class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
+      <div id="test-form">
+        <div id="questions-container">
+          <!-- Pytania będą wygenerowane przez JavaScript -->
+        </div>
+        
+        <div class="mt-8 text-center">
+          <button 
+            id="submit-test" 
+            class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            disabled
+          >
+            Zakończ test
+          </button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="test-results" class="hidden">
+        <div id="success-result" class="text-center hidden">
+          <div class="mb-6">
+            <div class="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <span class="text-4xl">🎉</span>
+            </div>
+            <h2 class="text-3xl font-bold text-green-600 mb-2">Gratulacje!</h2>
+            <p class="text-xl text-gray-700 mb-6">
+              Uzyskałeś <span class="font-bold text-green-600">100%</span> poprawnych odpowiedzi!
+            </p>
+          </div>
+          
+          <!-- Certificate form -->
+          <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-semibold text-green-800 mb-4">Pobierz swój certyfikat</h3>
+            <div class="max-w-md mx-auto">
+              <input 
+                type="text" 
+                id="certificate-name" 
+                placeholder="Wprowadź swoje imię i nazwisko"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 mb-4"
+                required
+              >
+              <button 
+                id="generate-certificate"
+                class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
+              >
+                🏆 Wygeneruj certyfikat PDF
+              </button>
+            </div>
+          </div>
+          
+          <button 
+            id="retake-test" 
+            class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-200"
+          >
+            Powtórz test
+          </button>
+        </div>
+
+        <div id="fail-result" class="text-center hidden">
+          <div class="mb-6">
+            <div class="w-24 h-24 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <span class="text-4xl">😔</span>
+            </div>
+            <h2 class="text-3xl font-bold text-red-600 mb-2">Nie udało się tym razem</h2>
+            <p class="text-xl text-gray-700 mb-2">
+              Uzyskałeś <span id="score-percentage" class="font-bold text-red-600"></span> poprawnych odpowiedzi.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Do otrzymania certyfikatu potrzebujesz 100% poprawnych odpowiedzi.
+            </p>
+          </div>
+          
+          <div class="space-y-4">
+            <button 
+              id="retake-test-fail" 
+              class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            >
+              🔄 Spróbuj ponownie
+            </button>
+            <br>
+            <a 
+              href="/lekcje" 
+              class="inline-block bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-200"
+            >
+              📚 Wróć do lekcji
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Pytania testowe
+    const questions = [
+      {
+        question: "Czym jest sztuczna inteligencja (AI)?",
+        options: [
+          "Tylko programy komputerowe do gier",
+          "Technologia pozwalająca maszynom wykonywać zadania wymagające inteligencji podobnej do ludzkiej",
+          "Wyłącznie roboty humanoidalne",
+          "System do przechowywania danych"
+        ],
+        correct: 1
+      },
+      {
+        question: "W którym roku po raz pierwszy użyto terminu 'artificial intelligence'?",
+        options: ["1950", "1956", "1960", "1943"],
+        correct: 1
+      },
+      {
+        question: "Który z poniższych NIE jest przykładem AI w codziennym życiu?",
+        options: [
+          "Asystenci głosowi (Siri, Alexa)",
+          "Systemy rekomendacji Netflix",
+          "Nawigacja GPS",
+          "Zwykły kalkulator"
+        ],
+        correct: 3
+      },
+      {
+        question: "Co to jest Test Turinga?",
+        options: [
+          "Test szybkości komputera",
+          "Test sprawdzający, czy maszyna może 'myśleć' jak człowiek",
+          "Test bezpieczeństwa systemów",
+          "Test wydajności algorytmów"
+        ],
+        correct: 1
+      },
+      {
+        question: "Co spowodowało 'zimy AI' w historii sztucznej inteligencji?",
+        options: [
+          "Tylko wysokie koszty badań",
+          "Brak zainteresowania naukowców",
+          "Przeszacowane oczekiwania, ograniczona moc obliczeniowa i wysokie koszty",
+          "Problemy z internetem"
+        ],
+        correct: 2
+      },
+      {
+        question: "Który system AI pokonał mistrza świata w szachach w 1997 roku?",
+        options: ["AlphaGo", "Deep Blue", "Watson", "GPT-1"],
+        correct: 1
+      },
+      {
+        question: "Co zmieniło się między latami 70. a współczesnością, umożliwiając rozwój AI?",
+        options: [
+          "Tylko lepsze komputery",
+          "Eksplozja danych, większa moc obliczeniowa i nowe algorytmy",
+          "Tylko więcej pieniędzy na badania",
+          "Tylko internet"
+        ],
+        correct: 1
+      },
+      {
+        question: "Który przełom w 2012 roku rozpoczął erę głębokiego uczenia?",
+        options: ["GPT-1", "AlexNet", "ELIZA", "Perceptron"],
+        correct: 1
+      },
+      {
+        question: "Co charakteryzuje współczesną rewolucję AI (od 2010 roku)?",
+        options: [
+          "Tylko szybsze komputery",
+          "Deep learning, transformery i modele językowe",
+          "Tylko więcej danych",
+          "Tylko lepsze algorytmy z lat 80."
+        ],
+        correct: 1
+      },
+      {
+        question: "Która z poniższych lekcji płynie z historii AI?",
+        options: [
+          "Postęp jest zawsze liniowy i przewidywalny",
+          "AI nie potrzebuje współpracy naukowców",
+          "Postęp nie jest liniowy i przełomy są często nieprzewidywalne",
+          "Historia AI nie ma znaczenia dla przyszłości"
+        ],
+        correct: 2
+      }
+    ];
+
+    let currentAnswers: { [key: number]: number } = {};
+    
+    function initializeTest() {
+      const container = document.getElementById('questions-container');
+      const submitBtn = document.getElementById('submit-test') as HTMLButtonElement;
+      
+      if (!container || !submitBtn) return;
+      
+      container.innerHTML = '';
+      currentAnswers = {};
+      
+      questions.forEach((q, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'mb-8 p-6 border border-gray-200 rounded-lg';
+        
+        questionDiv.innerHTML = `
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">
+            ${index + 1}. ${q.question}
+          </h3>
+          <div class="space-y-3">
+            ${q.options.map((option, optIndex) => `
+              <label class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input 
+                  type="radio" 
+                  name="question-${index}" 
+                  value="${optIndex}"
+                  class="w-4 h-4 text-emerald-600 focus:ring-emerald-500 border-gray-300"
+                >
+                <span class="text-gray-700">${option}</span>
+              </label>
+            `).join('')}
+          </div>
+        `;
+        
+        container.appendChild(questionDiv);
+      });
+      
+      // Nasłuchuj zmian w odpowiedziach
+      container.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        if (target && target.type === 'radio') {
+          const questionIndex = parseInt(target.name.split('-')[1]);
+          currentAnswers[questionIndex] = parseInt(target.value);
+          
+          // Sprawdź czy wszystkie pytania zostały odpowiedziane
+          if (Object.keys(currentAnswers).length === questions.length) {
+            submitBtn.disabled = false;
+          }
+        }
+      });
+      
+      submitBtn.disabled = true;
+    }
+    
+    function showResults() {
+      let correctCount = 0;
+      
+      questions.forEach((q, index) => {
+        if (currentAnswers[index] === q.correct) {
+          correctCount++;
+        }
+      });
+      
+      const percentage = Math.round((correctCount / questions.length) * 100);
+      
+      const testForm = document.getElementById('test-form');
+      const testResults = document.getElementById('test-results');
+      
+      if (!testForm || !testResults) return;
+      
+      testForm.classList.add('hidden');
+      testResults.classList.remove('hidden');
+      
+      const successResult = document.getElementById('success-result');
+      const failResult = document.getElementById('fail-result');
+      
+      if (!successResult || !failResult) return;
+      
+      if (percentage === 100) {
+        successResult.classList.remove('hidden');
+        failResult.classList.add('hidden');
+      } else {
+        successResult.classList.add('hidden');
+        failResult.classList.remove('hidden');
+        const scoreElement = document.getElementById('score-percentage');
+        if (scoreElement) {
+          scoreElement.textContent = `${percentage}%`;
+        }
+      }
+    }
+    
+    function resetTest() {
+      const testForm = document.getElementById('test-form');
+      const testResults = document.getElementById('test-results');
+      const certificateName = document.getElementById('certificate-name') as HTMLInputElement;
+      
+      if (!testForm || !testResults) return;
+      
+      testForm.classList.remove('hidden');
+      testResults.classList.add('hidden');
+      
+      if (certificateName) {
+        certificateName.value = '';
+      }
+      
+      initializeTest();
+    }
+    
+    function generateCertificate() {
+      const nameInput = document.getElementById('certificate-name') as HTMLInputElement;
+      
+      if (!nameInput) return;
+      
+      const name = nameInput.value.trim();
+      
+      if (!name) {
+        alert('Proszę wprowadzić imię i nazwisko');
+        return;
+      }
+      
+      // Tu będzie logika generowania PDF
+      // Na razie pokazujemy alert
+      alert(`Gratulacje ${name}! W pełnej wersji tutaj zostałby wygenerowany certyfikat PDF.`);
+    }
+    
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeTest();
+      
+      const submitBtn = document.getElementById('submit-test');
+      const retakeBtn = document.getElementById('retake-test');
+      const retakeFailBtn = document.getElementById('retake-test-fail');
+      const generateBtn = document.getElementById('generate-certificate');
+      
+      if (submitBtn) {
+        submitBtn.addEventListener('click', showResults);
+      }
+      if (retakeBtn) {
+        retakeBtn.addEventListener('click', resetTest);
+      }
+      if (retakeFailBtn) {
+        retakeFailBtn.addEventListener('click', resetTest);
+      }
+      if (generateBtn) {
+        generateBtn.addEventListener('click', generateCertificate);
+      }
+    });
+  </script>
+</Layout>

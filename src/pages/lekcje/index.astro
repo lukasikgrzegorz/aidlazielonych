@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Pobierz wszystkie lekcje
+const allLekcje = await getCollection('lekcje', ({ data }) => {
+  return data.published === true;
+});
+
+// Sortuj lekcje według numeru porządkowego
+const sortedLekcje = allLekcje.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Lekcje - AI dla Zielonych" description="Wszystkie lekcje kursu AI dla początkujących. Uczenie się AI krok po kroku.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        📚 Lekcje kursu
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Poznaj świat sztucznej inteligencji krok po kroku. Każda lekcja jest napisana prostym językiem i zawiera praktyczne przykłady.
+      </p>
+    </div>
+
+    <!-- Progress info -->
+    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-8">
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">💡</span>
+        <div>
+          <p class="font-semibold text-emerald-800">Jak korzystać z kursu?</p>
+          <p class="text-emerald-700 text-sm">
+            Lekcje możesz czytać w dowolnej kolejności, ale zalecamy przejście po kolei. Po ukończeniu wszystkich lekcji możesz przystąpić do <a href="/test" class="underline hover:text-emerald-900">testu końcowego</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lessons list -->
+    <div class="space-y-4">
+      {sortedLekcje.map((lekcja, index) => {
+        const { slug } = lekcja;
+        const { title, description, duration, tags } = lekcja.data;
+        
+        return (
+          <article class="bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:border-emerald-300 transition-all duration-300">
+            <a href={`/lekcje/${slug}`} class="block p-6 hover:bg-gray-50">
+              <div class="flex items-start justify-between">
+                <div class="flex-grow">
+                  <div class="flex items-center space-x-3 mb-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      {lekcja.data.order}
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 hover:text-emerald-600 transition-colors">
+                      {title}
+                    </h2>
+                    {duration && (
+                      <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-md text-xs font-medium">
+                        {duration}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <p class="text-gray-600 leading-relaxed mb-3">
+                    {description}
+                  </p>
+                  
+                  {tags && tags.length > 0 && (
+                    <div class="flex flex-wrap gap-2">
+                      {tags.map((tag) => (
+                        <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded-md text-xs">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                
+                <div class="ml-4 flex-shrink-0">
+                  <div class="w-6 h-6 text-emerald-500">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Call to action -->
+    <div class="mt-12 text-center">
+      <div class="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-4">Gotowy na test końcowy?</h2>
+        <p class="mb-6 opacity-90">
+          Po przejrzeniu lekcji sprawdź swoją wiedzę w teście końcowym. Uzyskanie 100% poprawnych odpowiedzi pozwoli Ci pobrać certyfikat ukończenia.
+        </p>
+        <a 
+          href="/test" 
+          class="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 inline-block"
+          role="button"
+          aria-label="Przejdź do testu końcowego"
+        >
+          📝 Przystąp do testu
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

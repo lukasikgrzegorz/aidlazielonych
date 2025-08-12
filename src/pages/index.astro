@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="AI dla Zielonych - Kurs AI dla początkujących">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <div class="mb-8">
+        <div class="w-24 h-24 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
+          <span class="text-white font-bold text-3xl">AI</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+          AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">DLA ZIELONYCH</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Darmowy kurs sztucznej inteligencji dla początkujących. 
+          Naucz się podstaw AI w prosty i przystępny sposób.
+        </p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/lekcje" 
+          class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+          role="button"
+          aria-label="Rozpocznij naukę - przejdź do lekcji"
+        >
+          🚀 Rozpocznij naukę
+        </a>
+        <a 
+          href="/test" 
+          class="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-50 transition-all duration-200"
+          role="button"
+          aria-label="Przejdź od razu do testu końcowego"
+        >
+          📝 Test końcowy
+        </a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="bg-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-2xl">⚡</span>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Natychmiastowy dostęp</h3>
+        <p class="text-gray-600">
+          Bez rejestracji, bez cookies, bez śledzenia. Otwórz i zacznij się uczyć od razu.
+        </p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-2xl">📚</span>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Dla początkujących</h3>
+        <p class="text-gray-600">
+          Lekcje napisane prostym językiem, bez zbędnego żargonu technicznego.
+        </p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow duration-300">
+        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+          <span class="text-2xl">🏆</span>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Certyfikat PDF</h3>
+        <p class="text-gray-600">
+          Po ukończeniu otrzymasz certyfikat do pobrania w formacie PDF.
+        </p>
+      </div>
+    </section>
+
+    <!-- Course Content Preview -->
+    <section class="bg-white rounded-xl p-8 shadow-md border border-emerald-100">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Co nauczysz się w tym kursie?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Czym jest sztuczna inteligencja</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Historia rozwoju AI</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Rodzaje i typy AI</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Uczenie maszynowe podstawy</span>
+          </li>
+        </ul>
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Zastosowania AI w życiu</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Etyka i bezpieczeństwo AI</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Przyszłość sztucznej inteligencji</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Praktyczne narzędzia AI</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</Layout>
