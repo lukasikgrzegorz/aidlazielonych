@@ -7,6 +7,7 @@ export interface Props {
 const { title, description = "Kurs AI dla początkujących - naucz się podstaw sztucznej inteligencji" } = Astro.props;
 
 import '../styles/global.css';
+import { createUrl } from '../utils/url';
 ---
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={createUrl("/favicon.svg")} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     
@@ -37,9 +38,9 @@ import '../styles/global.css';
               <h1 class="text-xl font-bold text-gray-900">AI DLA ZIELONYCH</h1>
             </div>
             <div class="hidden sm:flex items-center space-x-6">
-              <a href="/" class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Strona główna</a>
-              <a href="/lekcje" class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Lekcje</a>
-              <a href="/test" class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Test końcowy</a>
+              <a href={createUrl("/")} class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Strona główna</a>
+              <a href={createUrl("/lekcje")} class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Lekcje</a>
+              <a href={createUrl("/test")} class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Test końcowy</a>
             </div>
           </div>
         </nav>

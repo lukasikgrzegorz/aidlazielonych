@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { createUrl } from '../utils/url';
 ---
 
 <Layout title="AI dla Zielonych - Kurs AI dla początkujących">
@@ -21,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
-          href="/lekcje" 
+          href={createUrl("/lekcje")}
           class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
           role="button"
           aria-label="Rozpocznij naukę - przejdź do lekcji"
@@ -29,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
           🚀 Rozpocznij naukę
         </a>
         <a 
-          href="/test" 
+          href={createUrl("/test")}
           class="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-50 transition-all duration-200"
           role="button"
           aria-label="Przejdź od razu do testu końcowego"
