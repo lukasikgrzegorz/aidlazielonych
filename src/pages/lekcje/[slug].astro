@@ -29,25 +29,25 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
 ---
 
 <Layout title={`${lekcja.data.title} - AI dla Zielonych`} description={lekcja.data.description}>
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-w-0">
     <!-- Breadcrumb -->
     <nav class="mb-8" aria-label="Breadcrumb">
-      <ol class="flex items-center space-x-2 text-sm text-gray-500">
-        <li><a href={createUrl("/")} class="hover:text-emerald-600">Strona główna</a></li>
-        <li><span class="mx-2">/</span></li>
-        <li><a href={createUrl("/lekcje")} class="hover:text-emerald-600">Lekcje</a></li>
-        <li><span class="mx-2">/</span></li>
+      <ol class="flex flex-wrap items-center gap-1 text-sm text-gray-500">
+        <li><a href={createUrl("/")} class="hover:text-emerald-600 whitespace-nowrap">Strona główna</a></li>
+        <li><span class="mx-1 text-gray-400">/</span></li>
+        <li><a href={createUrl("/lekcje")} class="hover:text-emerald-600 whitespace-nowrap">Lekcje</a></li>
+        <li><span class="mx-1 text-gray-400">/</span></li>
         <li class="text-gray-900 font-medium">{lekcja.data.title}</li>
       </ol>
     </nav>
 
     <!-- Header -->
     <header class="mb-8">
-      <div class="flex items-center space-x-3 mb-4">
+      <div class="flex items-start space-x-4 mb-4">
         <div class="w-10 h-10 min-w-[2.5rem] flex-shrink-0 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold">
           {lekcja.data.order}
         </div>
-        <div>
+        <div class="flex-1">
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
             {lekcja.data.title}
           </h1>
@@ -70,27 +70,27 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
     </header>
 
     <!-- Content -->
-    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8 sm:p-10 lg:p-12 mb-12">
-      <div class="lesson-content max-w-none">
+    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-4 sm:p-8 lg:p-12 mb-12">
+      <div class="lesson-content max-w-none overflow-x-auto">
         <Content />
       </div>
 
       <!-- Navigation -->
       <div class="border-t border-gray-200 pt-8 mt-8">
         <nav aria-label="Nawigacja między lekcjami">
-          <div class="flex justify-between items-center gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {previousLekcja ? (
-              <div class={nextLekcja ? "flex-1" : "max-w-md"}>
+              <div class="flex flex-col">
                 <p class="text-sm text-gray-500 mb-2">Poprzednia lekcja</p>
                 <a 
                   href={createUrl(`/lekcje/${previousLekcja.slug}`)}
-                  class="block bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50 transition-all duration-200 group"
+                  class="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50 transition-all duration-200 group"
                 >
-                  <div class="flex items-center space-x-3">
+                  <div class="flex items-center space-x-3 h-full">
                     <div class="w-8 h-8 min-w-[2rem] flex-shrink-0 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
                       ←
                     </div>
-                    <div>
+                    <div class="min-w-0 flex-1">
                       <div class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
                         {previousLekcja.data.title}
                       </div>
@@ -102,18 +102,18 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
                 </a>
               </div>
             ) : (
-              <div class="flex-1"></div>
+              <div class="hidden sm:block"></div>
             )}
             
             {nextLekcja && (
-              <div class="flex-1">
-                <p class="text-sm text-gray-500 mb-2 text-right">Następna lekcja</p>
+              <div class="flex flex-col">
+                <p class="text-sm text-gray-500 mb-2 sm:text-right">Następna lekcja</p>
                 <a 
                   href={createUrl(`/lekcje/${nextLekcja.slug}`)}
-                  class="block bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50 transition-all duration-200 group"
+                  class="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50 transition-all duration-200 group"
                 >
-                  <div class="flex items-center justify-end space-x-3">
-                    <div class="text-right">
+                  <div class="flex items-center space-x-3 sm:justify-end h-full">
+                    <div class="min-w-0 flex-1 sm:text-right order-1 sm:order-none">
                       <div class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
                         {nextLekcja.data.title}
                       </div>
@@ -121,7 +121,7 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
                         Lekcja {nextLekcja.data.order}
                       </div>
                     </div>
-                    <div class="w-8 h-8 min-w-[2rem] flex-shrink-0 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
+                    <div class="w-8 h-8 min-w-[2rem] flex-shrink-0 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors order-2 sm:order-none">
                       →
                     </div>
                   </div>
@@ -154,3 +154,22 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
     )}
   </article>
 </Layout>
+
+<script>
+  // Wrap tables in responsive containers for better mobile display
+  document.addEventListener('DOMContentLoaded', function() {
+    const tables = document.querySelectorAll('.lesson-content table');
+    tables.forEach(table => {
+      const parent = table.parentElement;
+      if (parent && !parent.classList.contains('table-wrapper')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrapper';
+        const parentNode = table.parentNode;
+        if (parentNode) {
+          parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        }
+      }
+    });
+  });
+</script>

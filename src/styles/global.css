@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Prevent horizontal overflow */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
 /* Custom styles for lesson content - override Tailwind defaults */
 .lesson-content h1 {
   font-size: 2.5rem !important;
@@ -141,6 +150,19 @@
   border: 1px solid #e5e7eb !important;
   border-radius: 0.5rem !important;
   overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+.lesson-content .table-wrapper {
+  overflow-x: auto !important;
+  margin: 2rem 0 !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+}
+
+.lesson-content .table-wrapper table {
+  margin: 0 !important;
+  min-width: max-content !important;
 }
 
 .lesson-content th {
@@ -150,12 +172,14 @@
   font-weight: 700 !important;
   color: #047857 !important;
   border-bottom: 1px solid #e5e7eb !important;
+  white-space: nowrap !important;
 }
 
 .lesson-content td {
   padding: 1rem !important;
   border-bottom: 1px solid #f3f4f6 !important;
   color: #374151 !important;
+  white-space: nowrap !important;
 }
 
 .lesson-content hr {
@@ -181,5 +205,15 @@
   .lesson-content p, 
   .lesson-content li {
     font-size: 1rem !important;
+  }
+  
+  .lesson-content table {
+    font-size: 0.875rem !important;
+  }
+  
+  .lesson-content th,
+  .lesson-content td {
+    padding: 0.75rem !important;
+    white-space: nowrap !important;
   }
 }

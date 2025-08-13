@@ -194,6 +194,75 @@ import { createUrl } from '../utils/url';
           });
         }
       });
+
+      // Table scroll detection and hint injection
+      function addScrollHintsToTables() {
+        // Find all tables in lesson content
+        const tables = document.querySelectorAll('.lesson-content table');
+        
+        tables.forEach(table => {
+          // Skip if hint already added
+          if (table.parentElement?.nextElementSibling?.classList.contains('table-scroll-hint')) {
+            return;
+          }
+          
+          // Check if table needs scrolling
+          const tableContainer = table.closest('.table-wrapper') || table.parentElement;
+          const htmlTable = table as HTMLElement;
+          const htmlContainer = tableContainer as HTMLElement;
+          
+          const needsScroll = htmlTable.scrollWidth > htmlTable.clientWidth || 
+                             (htmlContainer && htmlTable.offsetWidth > htmlContainer.offsetWidth);
+          
+          if (needsScroll || window.innerWidth <= 640) { // Always show on mobile
+            // Create hint element
+            const hint = document.createElement('div');
+            hint.className = 'table-scroll-hint text-sm text-gray-600 mt-3 mb-4 flex items-start gap-2';
+            hint.innerHTML = `
+              <span class="text-base flex-shrink-0 mt-0.5">💡</span>
+              <em class="leading-relaxed">Wskazówka: Na urządzeniach mobilnych lub przy wąskim ekranie możesz przewinąć tabelę w prawo, aby zobaczyć wszystkie kolumny.</em>
+            `;
+            
+            // Insert hint after table (or after table wrapper if it exists)
+            const insertAfter = table.closest('.table-wrapper') || table;
+            insertAfter.insertAdjacentElement('afterend', hint);
+          }
+        });
+      }
+
+      // Run when page loads and content is rendered
+      document.addEventListener('DOMContentLoaded', () => {
+        // Add a small delay to ensure all content is rendered
+        setTimeout(addScrollHintsToTables, 100);
+      });
+      
+      // Use ResizeObserver for better performance and accuracy
+      if (typeof ResizeObserver !== 'undefined') {
+        let resizeTimer: number;
+        const resizeObserver = new ResizeObserver((entries) => {
+          // Debounce the resize handling
+          clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(() => {
+            // Remove existing hints
+            document.querySelectorAll('.table-scroll-hint').forEach(hint => hint.remove());
+            // Re-add hints where needed
+            addScrollHintsToTables();
+          }, 150);
+        });
+        
+        // Observe the body or main container for size changes
+        resizeObserver.observe(document.body);
+      } else {
+        // Fallback for older browsers
+        let resizeTimeout: number;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = window.setTimeout(() => {
+            document.querySelectorAll('.table-scroll-hint').forEach(hint => hint.remove());
+            addScrollHintsToTables();
+          }, 150);
+        });
+      }
     </script>
   </body>
 </html>
