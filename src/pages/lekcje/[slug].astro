@@ -70,67 +70,73 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
     </header>
 
     <!-- Content -->
-    <div class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-blockquote:border-l-4 prose-blockquote:border-emerald-500 prose-blockquote:bg-emerald-50 prose-blockquote:px-4 prose-blockquote:py-2 prose-blockquote:italic prose-table:w-full prose-th:bg-emerald-50 prose-th:p-3 prose-th:text-left prose-td:p-3 prose-td:border-t prose-td:border-gray-200">
-      <Content />
-    </div>
-
-    <!-- Navigation -->
-    <nav class="mt-12 pt-8 border-t border-gray-200" aria-label="Nawigacja między lekcjami">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {previousLekcja && (
-          <div class="text-left">
-            <p class="text-sm text-gray-500 mb-2">Poprzednia lekcja</p>
-            <a 
-              href={createUrl(`/lekcje/${previousLekcja.slug}`)}
-              class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md transition-all duration-200 group"
-            >
-              <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-gray-100 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
-                  ←
-                </div>
-                <div>
-                  <div class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
-                    {previousLekcja.data.title}
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    Lekcja {previousLekcja.data.order}
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        )}
-        
-        {nextLekcja && (
-          <div class="text-right">
-            <p class="text-sm text-gray-500 mb-2">Następna lekcja</p>
-            <a 
-              href={createUrl(`/lekcje/${nextLekcja.slug}`)}
-              class="block bg-white border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md transition-all duration-200 group"
-            >
-              <div class="flex items-center justify-end space-x-3">
-                <div>
-                  <div class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
-                    {nextLekcja.data.title}
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    Lekcja {nextLekcja.data.order}
-                  </div>
-                </div>
-                <div class="w-8 h-8 bg-gray-100 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
-                  →
-                </div>
-              </div>
-            </a>
-          </div>
-        )}
+    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8 sm:p-10 lg:p-12 mb-12">
+      <div class="lesson-content max-w-none">
+        <Content />
       </div>
-    </nav>
+
+      <!-- Navigation -->
+      <div class="border-t border-gray-200 pt-8 mt-8">
+        <nav aria-label="Nawigacja między lekcjami">
+          <div class="flex justify-between items-center gap-6">
+            {previousLekcja ? (
+              <div class={nextLekcja ? "flex-1" : "max-w-md"}>
+                <p class="text-sm text-gray-500 mb-2">Poprzednia lekcja</p>
+                <a 
+                  href={createUrl(`/lekcje/${previousLekcja.slug}`)}
+                  class="block bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50 transition-all duration-200 group"
+                >
+                  <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
+                      ←
+                    </div>
+                    <div>
+                      <div class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                        {previousLekcja.data.title}
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        Lekcja {previousLekcja.data.order}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ) : (
+              <div class="flex-1"></div>
+            )}
+            
+            {nextLekcja && (
+              <div class="flex-1">
+                <p class="text-sm text-gray-500 mb-2 text-right">Następna lekcja</p>
+                <a 
+                  href={createUrl(`/lekcje/${nextLekcja.slug}`)}
+                  class="block bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50 transition-all duration-200 group"
+                >
+                  <div class="flex items-center justify-end space-x-3">
+                    <div class="text-right">
+                      <div class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                        {nextLekcja.data.title}
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        Lekcja {nextLekcja.data.order}
+                      </div>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
+                      →
+                    </div>
+                  </div>
+                </a>
+              </div>
+            )}
+          </div>
+        </nav>
+      </div>
+    </div>
 
     <!-- Call to action -->
     {currentIndex === sortedLekcje.length - 1 && (
-      <div class="mt-12 text-center">
-        <div class="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl p-8 text-white">
+      <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
+        <div class="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl p-8 text-white text-center">
           <h2 class="text-2xl font-bold mb-4">🎉 Gratulacje!</h2>
           <p class="mb-6 opacity-90">
             Ukończyłeś wszystkie lekcje! Teraz możesz sprawdzić swoją wiedzę w teście końcowym i otrzymać certyfikat.

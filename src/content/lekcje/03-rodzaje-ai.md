@@ -192,8 +192,3 @@ Współczesna AI to przede wszystkim **wąska sztuczna inteligencja (ANI)** - sy
 ## 💡 **Zapamiętaj**
 
 > "Nie ma jednego typu AI. To rodzina technologii, z których każda ma swoje mocne strony i ograniczenia. Kluczem jest wybór odpowiedniego narzędzia do konkretnego zadania."
-
----
-
-**Poprzednia lekcja:** [Historia sztucznej inteligencji](/lekcje/historia-ai)  
-**Następna lekcja:** [Podstawy uczenia maszynowego](/lekcje/uczenie-maszynowe)

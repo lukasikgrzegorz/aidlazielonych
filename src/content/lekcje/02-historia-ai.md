@@ -126,8 +126,3 @@ Historia AI to historia ludzkiej wytrwałości i innowacyjności. Od pierwszych 
 ## 💡 **Zapamiętaj**
 
 > "AI to nie jedna technologia, ale zbiór technik rozwijanych przez dziesięciolecia. Każdy przełom był możliwy dzięki pracom setek naukowców na całym świecie."
-
----
-
-**Poprzednia lekcja:** [Czym jest sztuczna inteligencja?](/lekcje/czym-jest-ai)  
-**Następna lekcja:** [Rodzaje i typy AI](/lekcje/rodzaje-ai)

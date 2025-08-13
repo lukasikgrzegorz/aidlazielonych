@@ -68,7 +68,3 @@ Sztuczna inteligencja to nie science fiction - to technologia, która już dziś
 ## 💡 **Zapamiętaj**
 
 > AI to narzędzie, które pomaga nam rozwiązywać problemy szybciej i bardziej efektywnie. Nie zastępuje ludzkiej inteligencji - uzupełnia ją!
-
----
-
-**Następna lekcja:** [Historia sztucznej inteligencji](/lekcje/historia-ai)

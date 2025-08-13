@@ -226,8 +226,3 @@ Uczenie maszynowe to potężne narzędzie, ale nie magia. To statystyka i matema
 ## 💡 **Zapamiętaj**
 
 > "Machine Learning to nie zamiana programistów na maszyny, ale danie maszynom zdolności uczenia się z danych. To narzędzie, które rozszerza nasze możliwości analityczne."
-
----
-
-**Poprzednia lekcja:** [Rodzaje i typy AI](/lekcje/rodzaje-ai)  
-**Następna lekcja:** [Zastosowania AI w życiu codziennym](/lekcje/zastosowania-ai)
