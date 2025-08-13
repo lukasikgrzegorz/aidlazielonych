@@ -26,21 +26,55 @@ import { createUrl } from '../utils/url';
     <meta property="og:type" content="website" />
     <meta name="robots" content="index, follow" />
   </head>
-  <body class="min-h-full bg-gradient-to-br from-emerald-50 to-teal-100 text-gray-900 font-sans antialiased">
+  <body class="min-h-full text-gray-900 font-sans antialiased" style="background: linear-gradient(to bottom right, #ecfdf5, #f0fdfa); background-attachment: fixed;">
     <div class="min-h-screen flex flex-col">
       <header class="bg-white shadow-sm border-b border-emerald-200">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div class="flex justify-between items-center py-4">
-            <div class="flex items-center space-x-2">
+            <a href={createUrl("/")} class="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200">
               <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
                 <span class="text-white font-bold text-sm">AI</span>
               </div>
               <h1 class="text-xl font-bold text-gray-900">AI DLA ZIELONYCH</h1>
-            </div>
-            <div class="hidden sm:flex items-center space-x-6">
+            </a>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-6">
               <a href={createUrl("/")} class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Strona główna</a>
               <a href={createUrl("/lekcje")} class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Lekcje</a>
               <a href={createUrl("/test")} class="text-gray-700 hover:text-emerald-600 transition-colors duration-200">Test końcowy</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+              <button 
+                type="button"
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500 transition-colors duration-200"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                id="mobile-menu-button"
+              >
+                <span class="sr-only">Otwórz menu główne</span>
+                <!-- Hamburger icon -->
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- X icon (hidden by default) -->
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile menu -->
+          <div class="md:hidden hidden" id="mobile-menu">
+            <div class="absolute left-0 right-0 top-full bg-white border-t border-emerald-200 shadow-lg z-50">
+              <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href={createUrl("/")} class="text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Strona główna</a>
+                <a href={createUrl("/lekcje")} class="text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Lekcje</a>
+                <a href={createUrl("/test")} class="text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Test końcowy</a>
+              </div>
             </div>
           </div>
         </nav>
@@ -59,5 +93,107 @@ import { createUrl } from '../utils/url';
         </div>
       </footer>
     </div>
+
+    <script>
+      // Mobile menu functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Mobile menu script loaded');
+        
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        console.log('Basic elements found:', {
+          button: !!mobileMenuButton,
+          menu: !!mobileMenu
+        });
+
+        if (mobileMenuButton && mobileMenu) {
+          // Get icons only when needed (they may not exist if button is hidden)
+          const getIcons = () => ({
+            hamburgerIcon: mobileMenuButton.querySelector('svg:first-child'),
+            xIcon: mobileMenuButton.querySelector('svg:last-child')
+          });
+
+          mobileMenuButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Menu button clicked');
+            
+            const { hamburgerIcon, xIcon } = getIcons();
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            console.log('Current state - expanded:', isExpanded);
+            
+            // Toggle aria-expanded
+            mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+            
+            // Toggle menu visibility
+            if (isExpanded) {
+              // Hide menu
+              mobileMenu.classList.add('hidden');
+              console.log('Hiding menu');
+            } else {
+              // Show menu
+              mobileMenu.classList.remove('hidden');
+              console.log('Showing menu');
+            }
+            
+            // Toggle icons (only if they exist)
+            if (hamburgerIcon && xIcon) {
+              if (isExpanded) {
+                hamburgerIcon.classList.remove('hidden');
+                hamburgerIcon.classList.add('block');
+                xIcon.classList.remove('block');
+                xIcon.classList.add('hidden');
+              } else {
+                hamburgerIcon.classList.remove('block');
+                hamburgerIcon.classList.add('hidden');
+                xIcon.classList.remove('hidden');
+                xIcon.classList.add('block');
+              }
+            }
+          });
+
+          // Close mobile menu when clicking outside
+          document.addEventListener('click', function(event) {
+            const target = event.target;
+            if (target && target instanceof Node && 
+                !mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
+              const { hamburgerIcon, xIcon } = getIcons();
+              
+              mobileMenu.classList.add('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+              
+              if (hamburgerIcon && xIcon) {
+                hamburgerIcon.classList.remove('hidden');
+                hamburgerIcon.classList.add('block');
+                xIcon.classList.remove('block');
+                xIcon.classList.add('hidden');
+              }
+            }
+          });
+
+          // Close mobile menu on window resize to desktop size
+          window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) { // md breakpoint
+              const { hamburgerIcon, xIcon } = getIcons();
+              
+              mobileMenu.classList.add('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+              
+              if (hamburgerIcon && xIcon) {
+                hamburgerIcon.classList.remove('hidden');
+                hamburgerIcon.classList.add('block');
+                xIcon.classList.remove('block');
+                xIcon.classList.add('hidden');
+              }
+            }
+          });
+        } else {
+          console.error('Mobile menu basic elements not found:', {
+            button: !!mobileMenuButton,
+            menu: !!mobileMenu
+          });
+        }
+      });
+    </script>
   </body>
 </html>
