@@ -7,8 +7,6 @@ tags: ["typy", "kategorie", "klasyfikacja"]
 published: true
 ---
 
-# Rodzaje i typy sztucznej inteligencji
-
 ## Wprowadzenie
 
 Sztuczna inteligencja to szerokie pojęcie obejmujące wiele różnych technologii i podejść. Aby lepiej zrozumieć ten świat, warto poznać główne kategorie i typy AI.

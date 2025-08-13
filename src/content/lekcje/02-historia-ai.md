@@ -7,8 +7,6 @@ tags: ["historia", "rozwój", "przełomy"]
 published: true
 ---
 
-# Historia sztucznej inteligencji
-
 ## Od marzeń do rzeczywistości
 
 Historia sztucznej inteligencji to opowieść o ludzkim dążeniu do zrozumienia i odtworzenia inteligencji. Podróż ta trwa już ponad 70 lat!

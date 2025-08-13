@@ -7,11 +7,9 @@ tags: ["podstawy", "definicje", "wprowadzenie"]
 published: true
 ---
 
-# Czym jest sztuczna inteligencja?
-
-## Wprowadzenie
-
 **Sztuczna inteligencja (AI - Artificial Intelligence)** to dziedzina informatyki, która skupia się na tworzeniu systemów komputerowych zdolnych do wykonywania zadań wymagających inteligencji podobnej do ludzkiej.
+
+---
 
 ## Podstawowe definicje
 

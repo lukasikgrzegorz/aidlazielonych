@@ -7,8 +7,6 @@ tags: ["uczenie-maszynowe", "algoritmy", "podstawy"]
 published: true
 ---
 
-# Podstawy uczenia maszynowego
-
 ## Wprowadzenie
 
 **Uczenie maszynowe (Machine Learning)** to serce współczesnej sztucznej inteligencji. To technologia, która pozwala komputerom "uczyć się" bez bezpośredniego programowania każdej możliwej sytuacji.

@@ -29,7 +29,7 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
 ---
 
 <Layout title={`${lekcja.data.title} - AI dla Zielonych`} description={lekcja.data.description}>
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <!-- Breadcrumb -->
     <nav class="mb-8" aria-label="Breadcrumb">
       <ol class="flex items-center space-x-2 text-sm text-gray-500">
@@ -44,7 +44,7 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
     <!-- Header -->
     <header class="mb-8">
       <div class="flex items-center space-x-3 mb-4">
-        <div class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold">
+        <div class="w-10 h-10 min-w-[2.5rem] flex-shrink-0 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold">
           {lekcja.data.order}
         </div>
         <div>
@@ -87,7 +87,7 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
                   class="block bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50 transition-all duration-200 group"
                 >
                   <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
+                    <div class="w-8 h-8 min-w-[2rem] flex-shrink-0 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
                       ←
                     </div>
                     <div>
@@ -121,7 +121,7 @@ const nextLekcja = currentIndex < sortedLekcje.length - 1 ? sortedLekcje[current
                         Lekcja {nextLekcja.data.order}
                       </div>
                     </div>
-                    <div class="w-8 h-8 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
+                    <div class="w-8 h-8 min-w-[2rem] flex-shrink-0 bg-gray-200 group-hover:bg-emerald-100 text-gray-600 group-hover:text-emerald-600 rounded-full flex items-center justify-center font-bold text-sm transition-colors">
                       →
                     </div>
                   </div>
