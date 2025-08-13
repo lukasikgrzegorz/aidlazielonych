@@ -44,22 +44,26 @@ const sortedLekcje = allLekcje.sort((a, b) => a.data.order - b.data.order);
         const { title, description, duration, tags } = lekcja.data;
         
         return (
-          <article class="bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:border-emerald-300 transition-all duration-300">
-            <a href={createUrl(`/lekcje/${slug}`)} class="block p-6 hover:bg-gray-50">
+          <article class="bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-300 overflow-hidden">
+            <a href={createUrl(`/lekcje/${slug}`)} class="block p-6 hover:bg-transparent">
               <div class="flex items-start justify-between">
                 <div class="flex-grow">
                   <div class="flex items-center space-x-3 mb-3">
-                    <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                    <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                       {lekcja.data.order}
                     </div>
-                    <h2 class="text-xl font-semibold text-gray-900 hover:text-emerald-600 transition-colors">
-                      {title}
-                    </h2>
-                    {duration && (
-                      <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-md text-xs font-medium">
-                        {duration}
-                      </span>
-                    )}
+                    <div class="flex-grow min-w-0">
+                      <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-3 gap-2 sm:gap-0">
+                        <h2 class="text-xl font-semibold text-gray-900 hover:text-emerald-600 transition-colors">
+                          {title}
+                        </h2>
+                        {duration && (
+                          <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-md text-xs font-medium flex-shrink-0 self-start sm:self-center">
+                            {duration}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                   
                   <p class="text-gray-600 leading-relaxed mb-3">
