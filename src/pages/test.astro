@@ -1,6 +1,218 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { createUrl } from '../utils/url';
+
+// Wszystkie dostępne pytania (20)
+const allQuestions = [
+  {
+    "id": 1,
+    "question": "Czym jest sztuczna inteligencja (AI)?",
+    "options": [
+      "Tylko programy komputerowe do gier",
+      "Technologia pozwalająca maszynom wykonywać zadania wymagające inteligencji podobnej do ludzkiej",
+      "Wyłącznie roboty humanoidalne",
+      "System do przechowywania danych"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2,
+    "question": "W którym roku po raz pierwszy użyto terminu 'artificial intelligence'?",
+    "options": ["1950", "1956", "1960", "1943"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "question": "Który z poniższych NIE jest przykładem AI w codziennym życiu?",
+    "options": [
+      "Asystenci głosowi (Siri, Alexa)",
+      "Systemy rekomendacji Netflix",
+      "Nawigacja GPS",
+      "Zwykły kalkulator"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 4,
+    "question": "Co to jest Test Turinga?",
+    "options": [
+      "Test szybkości komputera",
+      "Test sprawdzający, czy maszyna może 'myśleć' jak człowiek",
+      "Test bezpieczeństwa systemów",
+      "Test wydajności algorytmów"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 5,
+    "question": "Co spowodowało 'zimy AI' w historii sztucznej inteligencji?",
+    "options": [
+      "Tylko wysokie koszty badań",
+      "Brak zainteresowania naukowców",
+      "Przeszacowane oczekiwania, ograniczona moc obliczeniowa i wysokie koszty",
+      "Problemy z internetem"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "question": "Który system AI pokonał mistrza świata w szachach w 1997 roku?",
+    "options": ["AlphaGo", "Deep Blue", "Watson", "GPT-1"],
+    "correct": 1
+  },
+  {
+    "id": 7,
+    "question": "Co zmieniło się między latami 70. a współczesnością, umożliwiając rozwój AI?",
+    "options": [
+      "Tylko lepsze komputery",
+      "Eksplozja danych, większa moc obliczeniowa i nowe algorytmy",
+      "Tylko więcej pieniędzy na badania",
+      "Tylko internet"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 8,
+    "question": "Który przełom w 2012 roku rozpoczął erę głębokiego uczenia?",
+    "options": ["GPT-1", "AlexNet", "ELIZA", "Perceptron"],
+    "correct": 1
+  },
+  {
+    "id": 9,
+    "question": "Co charakteryzuje współczesną rewolucję AI (od 2010 roku)?",
+    "options": [
+      "Tylko szybsze komputery",
+      "Deep learning, transformery i modele językowe",
+      "Tylko więcej danych",
+      "Tylko lepsze algorytmy z lat 80."
+    ],
+    "correct": 1
+  },
+  {
+    "id": 10,
+    "question": "Która z poniższych lekcji płynie z historii AI?",
+    "options": [
+      "Postęp jest zawsze liniowy i przewidywalny",
+      "AI nie potrzebuje współpracy naukowców",
+      "Postęp nie jest liniowy i przełomy są często nieprzewidywalne",
+      "Historia AI nie ma znaczenia dla przyszłości"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 11,
+    "question": "Co to jest uczenie maszynowe (Machine Learning)?",
+    "options": [
+      "Programowanie tradycyjnych algorytmów",
+      "Dziedzina AI, która pozwala komputerom uczyć się bez bezpośredniego programowania",
+      "Tylko analiza danych statistycznych",
+      "System zarządzania bazami danych"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "question": "Które z poniższych to rodzaje uczenia maszynowego?",
+    "options": [
+      "Tylko uczenie nadzorowane",
+      "Uczenie nadzorowane, nienadzorowane i ze wzmocnieniem",
+      "Tylko uczenie głębokie",
+      "Tylko sieci neuronowe"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 13,
+    "question": "Co to jest sieć neuronowa?",
+    "options": [
+      "System do łączenia komputerów",
+      "Model matematyczny inspirowany działaniem mózgu",
+      "Typ bazy danych",
+      "Protokół internetowy"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 14,
+    "question": "Czym różni się AI wąska (Narrow AI) od AI ogólnej (AGI)?",
+    "options": [
+      "Nie ma różnicy",
+      "AI wąska wykonuje konkretne zadania, AGI mogłaby wykonywać dowolne zadania intelektualne",
+      "AI wąska jest szybsza",
+      "AGI jest tańsza w produkcji"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 15,
+    "question": "Co to są duże modele językowe (LLM)?",
+    "options": [
+      "Systemy do tłumaczenia języków",
+      "Modele AI trenowane na ogromnych ilościach tekstu do rozumienia i generowania języka",
+      "Słowniki cyfrowe",
+      "Programy do korekty pisowni"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 16,
+    "question": "Które z poniższych to przykłady zastosowań AI w medycynie?",
+    "options": [
+      "Tylko diagnoza obrazowa",
+      "Diagnoza, odkrywanie leków, chirurgia robotyczna i analiza genetyczna",
+      "Tylko prowadzenie dokumentacji",
+      "Tylko kalkulatory medyczne"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 17,
+    "question": "Co to jest 'hallucination' w kontekście AI?",
+    "options": [
+      "Problem z wyświetlaczem",
+      "Gdy AI generuje nieprawdziwe lub wymyślone informacje",
+      "Błąd w kodzie programu",
+      "Problem z internetem"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 18,
+    "question": "Jakie są główne wyzwania etyczne związane z AI?",
+    "options": [
+      "Tylko wysokie koszty",
+      "Bias, prywatność, przejrzystość, wpływ na zatrudnienie i bezpieczeństwo",
+      "Tylko szybkość działania",
+      "Tylko kompatybilność z systemami"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 19,
+    "question": "Co to jest 'prompt engineering'?",
+    "options": [
+      "Budowanie komputerów",
+      "Sztuka tworzenia skutecznych instrukcji dla modeli AI",
+      "Projektowanie stron internetowych",
+      "Programowanie aplikacji mobilnych"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 20,
+    "question": "Którą z poniższych technologii można wykorzystać do zrównoważonego rozwoju?",
+    "options": [
+      "Tylko panele słoneczne",
+      "AI do optymalizacji energii, przewidywania pogody, zarządzania zasobami i monitorowania środowiska",
+      "Tylko recykling",
+      "Tylko transport publiczny"
+    ],
+    "correct": 1
+  }
+];
+
+// Przekaż pytania do frontendu
+const questionsJson = JSON.stringify(allQuestions);
 ---
 
 <Layout title="Test końcowy - AI dla Zielonych" description="Sprawdź swoją wiedzę o sztucznej inteligencji i otrzymaj certyfikat ukończenia kursu.">
@@ -125,108 +337,50 @@ import { createUrl } from '../utils/url';
     </div>
   </div>
 
-  <script>
-    // Pytania testowe
-    const questions = [
-      {
-        question: "Czym jest sztuczna inteligencja (AI)?",
-        options: [
-          "Tylko programy komputerowe do gier",
-          "Technologia pozwalająca maszynom wykonywać zadania wymagające inteligencji podobnej do ludzkiej",
-          "Wyłącznie roboty humanoidalne",
-          "System do przechowywania danych"
-        ],
-        correct: 1
-      },
-      {
-        question: "W którym roku po raz pierwszy użyto terminu 'artificial intelligence'?",
-        options: ["1950", "1956", "1960", "1943"],
-        correct: 1
-      },
-      {
-        question: "Który z poniższych NIE jest przykładem AI w codziennym życiu?",
-        options: [
-          "Asystenci głosowi (Siri, Alexa)",
-          "Systemy rekomendacji Netflix",
-          "Nawigacja GPS",
-          "Zwykły kalkulator"
-        ],
-        correct: 3
-      },
-      {
-        question: "Co to jest Test Turinga?",
-        options: [
-          "Test szybkości komputera",
-          "Test sprawdzający, czy maszyna może 'myśleć' jak człowiek",
-          "Test bezpieczeństwa systemów",
-          "Test wydajności algorytmów"
-        ],
-        correct: 1
-      },
-      {
-        question: "Co spowodowało 'zimy AI' w historii sztucznej inteligencji?",
-        options: [
-          "Tylko wysokie koszty badań",
-          "Brak zainteresowania naukowców",
-          "Przeszacowane oczekiwania, ograniczona moc obliczeniowa i wysokie koszty",
-          "Problemy z internetem"
-        ],
-        correct: 2
-      },
-      {
-        question: "Który system AI pokonał mistrza świata w szachach w 1997 roku?",
-        options: ["AlphaGo", "Deep Blue", "Watson", "GPT-1"],
-        correct: 1
-      },
-      {
-        question: "Co zmieniło się między latami 70. a współczesnością, umożliwiając rozwój AI?",
-        options: [
-          "Tylko lepsze komputery",
-          "Eksplozja danych, większa moc obliczeniowa i nowe algorytmy",
-          "Tylko więcej pieniędzy na badania",
-          "Tylko internet"
-        ],
-        correct: 1
-      },
-      {
-        question: "Który przełom w 2012 roku rozpoczął erę głębokiego uczenia?",
-        options: ["GPT-1", "AlexNet", "ELIZA", "Perceptron"],
-        correct: 1
-      },
-      {
-        question: "Co charakteryzuje współczesną rewolucję AI (od 2010 roku)?",
-        options: [
-          "Tylko szybsze komputery",
-          "Deep learning, transformery i modele językowe",
-          "Tylko więcej danych",
-          "Tylko lepsze algorytmy z lat 80."
-        ],
-        correct: 1
-      },
-      {
-        question: "Która z poniższych lekcji płynie z historii AI?",
-        options: [
-          "Postęp jest zawsze liniowy i przewidywalny",
-          "AI nie potrzebuje współpracy naukowców",
-          "Postęp nie jest liniowy i przełomy są często nieprzewidywalne",
-          "Historia AI nie ma znaczenia dla przyszłości"
-        ],
-        correct: 2
+  <script define:vars={{ questionsJson }}>
+    // Pytania przekazane z serwera
+    const allQuestions = JSON.parse(questionsJson);
+    
+    // Funkcja do tasowania tablicy (Fisher-Yates shuffle)
+    function shuffleArray(array) {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
       }
-    ];
-
-    let currentAnswers: { [key: number]: number } = {};
+      return shuffled;
+    }
+    
+    // Funkcja do losowania 10 pytań z 20 dostępnych
+    function selectRandomQuestions() {
+      const shuffledQuestions = shuffleArray(allQuestions);
+      return shuffledQuestions.slice(0, 10);
+    }
+    
+    let currentQuestions = [];
+    let currentAnswers = {};
     
     function initializeTest() {
       const container = document.getElementById('questions-container');
-      const submitBtn = document.getElementById('submit-test') as HTMLButtonElement;
+      const submitBtn = document.getElementById('submit-test');
+      
+      if (!container || !submitBtn) return;
+      
+      // Wybierz losowe 10 pytań z dostępnych
+      currentQuestions = selectRandomQuestions();
+      renderQuestions();
+    }
+    
+    function renderQuestions() {
+      const container = document.getElementById('questions-container');
+      const submitBtn = document.getElementById('submit-test');
       
       if (!container || !submitBtn) return;
       
       container.innerHTML = '';
       currentAnswers = {};
       
-      questions.forEach((q, index) => {
+      currentQuestions.forEach((q, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'mb-8 p-6 border border-gray-200 rounded-lg';
         
@@ -254,13 +408,13 @@ import { createUrl } from '../utils/url';
       
       // Nasłuchuj zmian w odpowiedziach
       container.addEventListener('change', (e) => {
-        const target = e.target as HTMLInputElement;
+        const target = e.target;
         if (target && target.type === 'radio') {
           const questionIndex = parseInt(target.name.split('-')[1]);
           currentAnswers[questionIndex] = parseInt(target.value);
           
           // Sprawdź czy wszystkie pytania zostały odpowiedziane
-          if (Object.keys(currentAnswers).length === questions.length) {
+          if (Object.keys(currentAnswers).length === currentQuestions.length) {
             submitBtn.disabled = false;
           }
         }
@@ -272,13 +426,13 @@ import { createUrl } from '../utils/url';
     function showResults() {
       let correctCount = 0;
       
-      questions.forEach((q, index) => {
+      currentQuestions.forEach((q, index) => {
         if (currentAnswers[index] === q.correct) {
           correctCount++;
         }
       });
       
-      const percentage = Math.round((correctCount / questions.length) * 100);
+      const percentage = Math.round((correctCount / currentQuestions.length) * 100);
       
       const testForm = document.getElementById('test-form');
       const testResults = document.getElementById('test-results');
@@ -309,7 +463,7 @@ import { createUrl } from '../utils/url';
     function resetTest() {
       const testForm = document.getElementById('test-form');
       const testResults = document.getElementById('test-results');
-      const certificateName = document.getElementById('certificate-name') as HTMLInputElement;
+      const certificateName = document.getElementById('certificate-name');
       
       if (!testForm || !testResults) return;
       
@@ -324,7 +478,7 @@ import { createUrl } from '../utils/url';
     }
     
     function generateCertificate() {
-      const nameInput = document.getElementById('certificate-name') as HTMLInputElement;
+      const nameInput = document.getElementById('certificate-name');
       
       if (!nameInput) return;
       
