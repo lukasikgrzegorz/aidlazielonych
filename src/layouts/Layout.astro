@@ -97,15 +97,9 @@ import { createUrl } from '../utils/url';
     <script>
       // Mobile menu functionality
       document.addEventListener('DOMContentLoaded', function() {
-        console.log('Mobile menu script loaded');
         
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        console.log('Basic elements found:', {
-          button: !!mobileMenuButton,
-          menu: !!mobileMenu
-        });
 
         if (mobileMenuButton && mobileMenu) {
           // Get icons only when needed (they may not exist if button is hidden)
@@ -116,12 +110,10 @@ import { createUrl } from '../utils/url';
 
           mobileMenuButton.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Menu button clicked');
             
             const { hamburgerIcon, xIcon } = getIcons();
             const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-            console.log('Current state - expanded:', isExpanded);
-            
+
             // Toggle aria-expanded
             mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
             
@@ -129,11 +121,9 @@ import { createUrl } from '../utils/url';
             if (isExpanded) {
               // Hide menu
               mobileMenu.classList.add('hidden');
-              console.log('Hiding menu');
             } else {
               // Show menu
               mobileMenu.classList.remove('hidden');
-              console.log('Showing menu');
             }
             
             // Toggle icons (only if they exist)
