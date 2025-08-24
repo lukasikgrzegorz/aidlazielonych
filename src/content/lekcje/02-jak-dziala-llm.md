@@ -7,8 +7,6 @@ tags: ["LLM", "sieci-neuronowe", "tokeny", "embedding", "parametry"]
 published: true
 ---
 
-# Jak działają duże modele językowe
-
 ## Czym są duże modele językowe (LLM)?
 
 Duże modele językowe (LLM), takie jak GPT-4, to rodzaj sztucznej inteligencji, który potrafi generować i przetwarzać tekst w sposób podobny do ludzkiego.
