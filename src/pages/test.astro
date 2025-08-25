@@ -227,12 +227,34 @@ const questionsJson = JSON.stringify(allQuestions);
       </p>
     </div>
 
-    <!-- Info panel -->
-    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+    <!-- Test locked notification -->
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
+      <div class="flex items-start space-x-3">
+        <span class="text-2xl">🔒</span>
+        <div>
+          <h2 class="font-semibold text-amber-800 mb-2">Test tymczasowo niedostępny</h2>
+          <p class="text-amber-700 mb-4">
+            Test końcowy zostanie odblokowany po pełnej publikacji wszystkich lekcji kursu. 
+            Obecnie pracujemy nad finalizacją materiałów edukacyjnych.
+          </p>
+          <div class="text-amber-600 text-sm">
+            <p class="font-medium mb-1">Co możesz robić w międzyczasie:</p>
+            <ul class="space-y-1">
+              <li>• Przejrzyj już dostępne lekcje</li>
+              <li>• Powtórz materiał, który wydaje Ci się trudny</li>
+              <li>• Śledź nasze aktualizacje</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info panel (hidden until test is unlocked) -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 opacity-50">
       <div class="flex items-start space-x-3">
         <span class="text-2xl">ℹ️</span>
         <div>
-          <h2 class="font-semibold text-blue-800 mb-2">Informacje o teście</h2>
+          <h2 class="font-semibold text-blue-800 mb-2">Informacje o teście (wkrótce dostępne)</h2>
           <ul class="text-blue-700 text-sm space-y-1">
             <li>• Test składa się z 10 pytań jednokrotnego wyboru</li>
             <li>• Do zaliczenia wymagane jest 100% poprawnych odpowiedzi</li>
@@ -244,100 +266,52 @@ const questionsJson = JSON.stringify(allQuestions);
       </div>
     </div>
 
-    <!-- Test container -->
+    <!-- Test container (disabled) -->
     <div id="test-container" class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
-      <div id="test-form">
-        <div id="questions-container">
-          <!-- Pytania będą wygenerowane przez JavaScript -->
+      <div class="text-center py-12">
+        <div class="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+          <span class="text-4xl text-gray-400">🔒</span>
         </div>
-        
-        <div class="mt-8 text-center">
-          <button 
-            id="submit-test" 
-            class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            disabled
-          >
-            Zakończ test
-          </button>
-        </div>
-      </div>
-
-      <!-- Results -->
-      <div id="test-results" class="hidden">
-        <div id="success-result" class="text-center hidden">
-          <div class="mb-6">
-            <div class="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span class="text-4xl">🎉</span>
-            </div>
-            <h2 class="text-3xl font-bold text-green-600 mb-2">Gratulacje!</h2>
-            <p class="text-xl text-gray-700 mb-6">
-              Uzyskałeś <span class="font-bold text-green-600">100%</span> poprawnych odpowiedzi!
-            </p>
-          </div>
-          
-          <!-- Certificate form -->
-          <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-            <h3 class="text-lg font-semibold text-green-800 mb-4">Pobierz swój certyfikat</h3>
-            <div class="max-w-md mx-auto">
-              <input 
-                type="text" 
-                id="certificate-name" 
-                placeholder="Wprowadź swoje imię i nazwisko"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 mb-4"
-                required
-              >
-              <button 
-                id="generate-certificate"
-                class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
-              >
-                🏆 Wygeneruj certyfikat PDF
-              </button>
-            </div>
-          </div>
-          
-          <button 
-            id="retake-test" 
-            class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-200"
-          >
-            Powtórz test
-          </button>
-        </div>
-
-        <div id="fail-result" class="text-center hidden">
-          <div class="mb-6">
-            <div class="w-24 h-24 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <span class="text-4xl">😔</span>
-            </div>
-            <h2 class="text-3xl font-bold text-red-600 mb-2">Nie udało się tym razem</h2>
-            <p class="text-xl text-gray-700 mb-2">
-              Uzyskałeś <span id="score-percentage" class="font-bold text-red-600"></span> poprawnych odpowiedzi.
-            </p>
-            <p class="text-gray-600 mb-6">
-              Do otrzymania certyfikatu potrzebujesz 100% poprawnych odpowiedzi.
-            </p>
-          </div>
-          
-          <div class="space-y-4">
-            <button 
-              id="retake-test-fail" 
-              class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
-            >
-              🔄 Spróbuj ponownie
-            </button>
-            <br>
-            <a 
-              href={createUrl("/lekcje")}
-              class="inline-block bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-200"
-            >
-              📚 Wróć do lekcji
-            </a>
-          </div>
-        </div>
+        <h2 class="text-2xl font-bold text-gray-500 mb-4">Test zostanie wkrótce odblokowany</h2>
+        <p class="text-gray-600 mb-8 max-w-md mx-auto">
+          Pracujemy nad finalizacją wszystkich lekcji kursu. Test końcowy będzie dostępny po publikacji kompletnego materiału.
+        </p>
+        <a 
+          href={createUrl("/lekcje")}
+          class="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+        >
+          Przejdź do lekcji
+        </a>
       </div>
     </div>
   </div>
 
   <script define:vars={{ questionsJson }}>
+    // Test jest tymczasowo zablokowany
+    console.log('Test końcowy zostanie odblokowany po pełnej publikacji kursu.');
+    
+    // Wyłączenie funkcjonalności testu
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ukryj wszystkie interaktywne elementy testu
+      const testContainer = document.getElementById('test-container');
+      if (testContainer) {
+        // Usuń wszystkie event listenery i funkcjonalność
+        const buttons = testContainer.querySelectorAll('button');
+        buttons.forEach(btn => {
+          btn.disabled = true;
+          btn.style.pointerEvents = 'none';
+        });
+        
+        const inputs = testContainer.querySelectorAll('input');
+        inputs.forEach(input => {
+          input.disabled = true;
+          input.style.pointerEvents = 'none';
+        });
+      }
+    });
+    
+    // Oryginalny kod testu (wyłączony)
+    /*
     // Pytania przekazane z serwera
     const allQuestions = JSON.parse(questionsJson);
     
@@ -612,5 +586,6 @@ const questionsJson = JSON.stringify(allQuestions);
         generateBtn.addEventListener('click', generateCertificate);
       }
     });
+    */
   </script>
 </Layout>

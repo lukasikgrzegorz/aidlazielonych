@@ -13,14 +13,14 @@ npm run dev
 
 Projekt automatycznie deployuje się na GitHub Pages przy każdym push do branch `main`.
 
-URL produkcyjny: https://grzegorzkrukowski.github.io/aidlazielonych/
+URL produkcyjny: https://lukasikgrzegorz.github.io/aidlazielonych/
 
 ### Ręczny deployment lokalny
 ```bash
 npm run build:gh-pages
 ```
 
-## � Struktura projektu
+## Struktura projektu
 
 ```
 src/
@@ -80,9 +80,8 @@ Projekt jest w pełni zgodny z dokumentem PRD:
 - ✅ Statyczne generowanie treści
 - ✅ Test końcowy z wymogiem 100% poprawnych odpowiedzi
 - ✅ Certyfikat PDF po zaliczeniu
-- ✅ CDN ready
 
-## � Deployment
+## Deployment
 
 Projekt jest gotowy do wdrożenia na dowolnej platformie obsługującej statyczne strony:
 
@@ -94,7 +93,3 @@ Projekt jest gotowy do wdrożenia na dowolnej platformie obsługującej statyczn
 ```bash
 npm run build
 ```
-
-## 📄 Licencja
-
-MIT License - zobacz plik LICENSE
