@@ -1,9 +1,9 @@
 ---
-title: "Chatboty, asystenci i agenci"
+title: "Chatboty, asystenci i agenty"
 description: "Różnice między chatbotami, asystentami AI i agentami"
 order: 4
 duration: "15 min"
-tags: ["chatboty", "asystenci", "agenci", "gpt", "gemini", "claude"]
+tags: ["chatboty", "asystenci", "agenty", "gpt", "gemini", "claude"]
 published: true
 ---
 
