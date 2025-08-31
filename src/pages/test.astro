@@ -1,215 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { createUrl } from '../utils/url';
+import { getEntry } from 'astro:content';
 
-// Wszystkie dostępne pytania (20)
-const allQuestions = [
-  {
-    "id": 1,
-    "question": "Czym jest sztuczna inteligencja (AI)?",
-    "options": [
-      "Tylko programy komputerowe do gier",
-      "Technologia pozwalająca maszynom wykonywać zadania wymagające inteligencji podobnej do ludzkiej",
-      "Wyłącznie roboty humanoidalne",
-      "System do przechowywania danych"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 2,
-    "question": "W którym roku po raz pierwszy użyto terminu 'artificial intelligence'?",
-    "options": ["1950", "1956", "1960", "1943"],
-    "correct": 1
-  },
-  {
-    "id": 3,
-    "question": "Który z poniższych NIE jest przykładem AI w codziennym życiu?",
-    "options": [
-      "Asystenci głosowi (Siri, Alexa)",
-      "Systemy rekomendacji Netflix",
-      "Nawigacja GPS",
-      "Zwykły kalkulator"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 4,
-    "question": "Co to jest Test Turinga?",
-    "options": [
-      "Test szybkości komputera",
-      "Test sprawdzający, czy maszyna może 'myśleć' jak człowiek",
-      "Test bezpieczeństwa systemów",
-      "Test wydajności algorytmów"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 5,
-    "question": "Co spowodowało 'zimy AI' w historii sztucznej inteligencji?",
-    "options": [
-      "Tylko wysokie koszty badań",
-      "Brak zainteresowania naukowców",
-      "Przeszacowane oczekiwania, ograniczona moc obliczeniowa i wysokie koszty",
-      "Problemy z internetem"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 6,
-    "question": "Który system AI pokonał mistrza świata w szachach w 1997 roku?",
-    "options": ["AlphaGo", "Deep Blue", "Watson", "GPT-1"],
-    "correct": 1
-  },
-  {
-    "id": 7,
-    "question": "Co zmieniło się między latami 70. a współczesnością, umożliwiając rozwój AI?",
-    "options": [
-      "Tylko lepsze komputery",
-      "Eksplozja danych, większa moc obliczeniowa i nowe algorytmy",
-      "Tylko więcej pieniędzy na badania",
-      "Tylko internet"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 8,
-    "question": "Który przełom w 2012 roku rozpoczął erę głębokiego uczenia?",
-    "options": ["GPT-1", "AlexNet", "ELIZA", "Perceptron"],
-    "correct": 1
-  },
-  {
-    "id": 9,
-    "question": "Co charakteryzuje współczesną rewolucję AI (od 2010 roku)?",
-    "options": [
-      "Tylko szybsze komputery",
-      "Deep learning, transformery i modele językowe",
-      "Tylko więcej danych",
-      "Tylko lepsze algorytmy z lat 80."
-    ],
-    "correct": 1
-  },
-  {
-    "id": 10,
-    "question": "Która z poniższych lekcji płynie z historii AI?",
-    "options": [
-      "Postęp jest zawsze liniowy i przewidywalny",
-      "AI nie potrzebuje współpracy naukowców",
-      "Postęp nie jest liniowy i przełomy są często nieprzewidywalne",
-      "Historia AI nie ma znaczenia dla przyszłości"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 11,
-    "question": "Co to jest uczenie maszynowe (Machine Learning)?",
-    "options": [
-      "Programowanie tradycyjnych algorytmów",
-      "Dziedzina AI, która pozwala komputerom uczyć się bez bezpośredniego programowania",
-      "Tylko analiza danych statistycznych",
-      "System zarządzania bazami danych"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 12,
-    "question": "Które z poniższych to rodzaje uczenia maszynowego?",
-    "options": [
-      "Tylko uczenie nadzorowane",
-      "Uczenie nadzorowane, nienadzorowane i ze wzmocnieniem",
-      "Tylko uczenie głębokie",
-      "Tylko sieci neuronowe"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 13,
-    "question": "Co to jest sieć neuronowa?",
-    "options": [
-      "System do łączenia komputerów",
-      "Model matematyczny inspirowany działaniem mózgu",
-      "Typ bazy danych",
-      "Protokół internetowy"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 14,
-    "question": "Czym różni się AI wąska (Narrow AI) od AI ogólnej (AGI)?",
-    "options": [
-      "Nie ma różnicy",
-      "AI wąska wykonuje konkretne zadania, AGI mogłaby wykonywać dowolne zadania intelektualne",
-      "AI wąska jest szybsza",
-      "AGI jest tańsza w produkcji"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 15,
-    "question": "Co to są duże modele językowe (LLM)?",
-    "options": [
-      "Systemy do tłumaczenia języków",
-      "Modele AI trenowane na ogromnych ilościach tekstu do rozumienia i generowania języka",
-      "Słowniki cyfrowe",
-      "Programy do korekty pisowni"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 16,
-    "question": "Które z poniższych to przykłady zastosowań AI w medycynie?",
-    "options": [
-      "Tylko diagnoza obrazowa",
-      "Diagnoza, odkrywanie leków, chirurgia robotyczna i analiza genetyczna",
-      "Tylko prowadzenie dokumentacji",
-      "Tylko kalkulatory medyczne"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 17,
-    "question": "Co to jest 'hallucination' w kontekście AI?",
-    "options": [
-      "Problem z wyświetlaczem",
-      "Gdy AI generuje nieprawdziwe lub wymyślone informacje",
-      "Błąd w kodzie programu",
-      "Problem z internetem"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 18,
-    "question": "Jakie są główne wyzwania etyczne związane z AI?",
-    "options": [
-      "Tylko wysokie koszty",
-      "Bias, prywatność, przejrzystość, wpływ na zatrudnienie i bezpieczeństwo",
-      "Tylko szybkość działania",
-      "Tylko kompatybilność z systemami"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 19,
-    "question": "Co to jest 'prompt engineering'?",
-    "options": [
-      "Budowanie komputerów",
-      "Sztuka tworzenia skutecznych instrukcji dla modeli AI",
-      "Projektowanie stron internetowych",
-      "Programowanie aplikacji mobilnych"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 20,
-    "question": "Którą z poniższych technologii można wykorzystać do zrównoważonego rozwoju?",
-    "options": [
-      "Tylko panele słoneczne",
-      "AI do optymalizacji energii, przewidywania pogody, zarządzania zasobami i monitorowania środowiska",
-      "Tylko recykling",
-      "Tylko transport publiczny"
-    ],
-    "correct": 1
-  }
-];
+// Pobierz pytania testowe z content collections
+const testData = await getEntry('testy', 'test-koncowy');
+
+if (!testData) {
+  throw new Error('Nie można załadować danych testowych. Sprawdź czy plik test-koncowy.json istnieje w folderze src/content/testy/');
+}
+
+const allQuestions = testData.data.questions;
 
 // Przekaż pytania do frontendu
 const questionsJson = JSON.stringify(allQuestions);
@@ -223,40 +24,18 @@ const questionsJson = JSON.stringify(allQuestions);
         📝 Test końcowy
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Sprawdź swoją wiedzę z kursu "AI dla Zielonych". Aby otrzymać certyfikat, musisz uzyskać 100% poprawnych odpowiedzi.
+        Sprawdź swoją wiedzę z kursu "AI dla Zielonych". Aby otrzymać certyfikat, musisz udzielić wszystkich poprawnych odpowiedzi (100%).
       </p>
     </div>
 
-    <!-- Test locked notification -->
-    <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
-      <div class="flex items-start space-x-3">
-        <span class="text-2xl">🔒</span>
-        <div>
-          <h2 class="font-semibold text-amber-800 mb-2">Test tymczasowo niedostępny</h2>
-          <p class="text-amber-700 mb-4">
-            Test końcowy zostanie odblokowany po pełnej publikacji wszystkich lekcji kursu. 
-            Obecnie pracujemy nad finalizacją materiałów edukacyjnych.
-          </p>
-          <div class="text-amber-600 text-sm">
-            <p class="font-medium mb-1">Co możesz robić w międzyczasie:</p>
-            <ul class="space-y-1">
-              <li>• Przejrzyj już dostępne lekcje</li>
-              <li>• Powtórz materiał, który wydaje Ci się trudny</li>
-              <li>• Śledź nasze aktualizacje</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Info panel (hidden until test is unlocked) -->
-    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 opacity-50">
+    <!-- Info panel -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
       <div class="flex items-start space-x-3">
         <span class="text-2xl">ℹ️</span>
         <div>
-          <h2 class="font-semibold text-blue-800 mb-2">Informacje o teście (wkrótce dostępne)</h2>
+          <h2 class="font-semibold text-blue-800 mb-2">Informacje o teście</h2>
           <ul class="text-blue-700 text-sm space-y-1">
-            <li>• Test składa się z 10 pytań jednokrotnego wyboru</li>
+            <li>• Test składa się z 20 losowych pytań</li>
             <li>• Do zaliczenia wymagane jest 100% poprawnych odpowiedzi</li>
             <li>• Możesz podejść do testu wielokrotnie</li>
             <li>• Wynik zostanie pokazany natychmiast po zakończeniu</li>
@@ -266,52 +45,100 @@ const questionsJson = JSON.stringify(allQuestions);
       </div>
     </div>
 
-    <!-- Test container (disabled) -->
+    <!-- Test container -->
     <div id="test-container" class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
-      <div class="text-center py-12">
-        <div class="w-24 h-24 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-          <span class="text-4xl text-gray-400">🔒</span>
+      <div id="test-form">
+        <div id="questions-container">
+          <!-- Pytania będą wygenerowane przez JavaScript -->
         </div>
-        <h2 class="text-2xl font-bold text-gray-500 mb-4">Test zostanie wkrótce odblokowany</h2>
-        <p class="text-gray-600 mb-8 max-w-md mx-auto">
-          Pracujemy nad finalizacją wszystkich lekcji kursu. Test końcowy będzie dostępny po publikacji kompletnego materiału.
-        </p>
-        <a 
-          href={createUrl("/lekcje")}
-          class="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
-        >
-          Przejdź do lekcji
-        </a>
+        
+        <div class="mt-8 text-center">
+          <button 
+            id="submit-test" 
+            class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            disabled
+          >
+            Zakończ test
+          </button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="test-results" class="hidden">
+        <div id="success-result" class="text-center hidden">
+          <div class="mb-6">
+            <div class="w-24 h-24 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <span class="text-4xl">🎉</span>
+            </div>
+            <h2 class="text-3xl font-bold text-green-600 mb-2">Gratulacje!</h2>
+            <p class="text-xl text-gray-700 mb-6">
+              Uzyskałeś <span class="font-bold text-green-600"><span id="success-percentage"></span>%</span> poprawnych odpowiedzi!
+            </p>
+          </div>
+          
+          <!-- Certificate form -->
+          <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-semibold text-green-800 mb-4">Pobierz swój certyfikat</h3>
+            <div class="max-w-md mx-auto">
+              <input 
+                type="text" 
+                id="certificate-name" 
+                placeholder="Wprowadź swoje imię i nazwisko"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 mb-4"
+                required
+              >
+              <button 
+                id="generate-certificate"
+                class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
+              >
+                🏆 Wygeneruj certyfikat PDF
+              </button>
+            </div>
+          </div>
+          
+          <button 
+            id="retake-test" 
+            class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-200"
+          >
+            Powtórz test
+          </button>
+        </div>
+
+        <div id="fail-result" class="text-center hidden">
+          <div class="mb-6">
+            <div class="w-24 h-24 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <span class="text-4xl">😔</span>
+            </div>
+            <h2 class="text-3xl font-bold text-red-600 mb-2">Nie udało się tym razem</h2>
+            <p class="text-xl text-gray-700 mb-2">
+              Uzyskałeś <span id="score-percentage" class="font-bold text-red-600"></span> poprawnych odpowiedzi.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Do otrzymania certyfikatu potrzebujesz 100% poprawnych odpowiedzi.
+            </p>
+          </div>
+          
+          <div class="space-y-4">
+            <button 
+              id="retake-test-fail" 
+              class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            >
+              🔄 Spróbuj ponownie
+            </button>
+            <br>
+            <a 
+              href={createUrl("/lekcje")}
+              class="inline-block bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-200"
+            >
+              📚 Wróć do lekcji
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <script define:vars={{ questionsJson }}>
-    // Test jest tymczasowo zablokowany
-    console.log('Test końcowy zostanie odblokowany po pełnej publikacji kursu.');
-    
-    // Wyłączenie funkcjonalności testu
-    document.addEventListener('DOMContentLoaded', () => {
-      // Ukryj wszystkie interaktywne elementy testu
-      const testContainer = document.getElementById('test-container');
-      if (testContainer) {
-        // Usuń wszystkie event listenery i funkcjonalność
-        const buttons = testContainer.querySelectorAll('button');
-        buttons.forEach(btn => {
-          btn.disabled = true;
-          btn.style.pointerEvents = 'none';
-        });
-        
-        const inputs = testContainer.querySelectorAll('input');
-        inputs.forEach(input => {
-          input.disabled = true;
-          input.style.pointerEvents = 'none';
-        });
-      }
-    });
-    
-    // Oryginalny kod testu (wyłączony)
-    /*
     // Pytania przekazane z serwera
     const allQuestions = JSON.parse(questionsJson);
     
@@ -325,14 +152,15 @@ const questionsJson = JSON.stringify(allQuestions);
       return shuffled;
     }
     
-    // Funkcja do losowania 10 pytań z 20 dostępnych
+    // Funkcja do przygotowania pytań - losowych 20 z dostępnych
     function selectRandomQuestions() {
-      const shuffledQuestions = shuffleArray(allQuestions);
-      return shuffledQuestions.slice(0, 10);
+      const shuffled = shuffleArray(allQuestions);
+      return shuffled.slice(0, 20);
     }
     
     let currentQuestions = [];
     let currentAnswers = {};
+    let lastTestScore = 0;
     
     function initializeTest() {
       const container = document.getElementById('questions-container');
@@ -407,6 +235,7 @@ const questionsJson = JSON.stringify(allQuestions);
       });
       
       const percentage = Math.round((correctCount / currentQuestions.length) * 100);
+      lastTestScore = percentage;
       
       const testForm = document.getElementById('test-form');
       const testResults = document.getElementById('test-results');
@@ -421,9 +250,13 @@ const questionsJson = JSON.stringify(allQuestions);
       
       if (!successResult || !failResult) return;
       
-      if (percentage === 100) {
+      if (percentage >= 100) {
         successResult.classList.remove('hidden');
         failResult.classList.add('hidden');
+        const successPercentageElement = document.getElementById('success-percentage');
+        if (successPercentageElement) {
+          successPercentageElement.textContent = percentage.toString();
+        }
       } else {
         successResult.classList.add('hidden');
         failResult.classList.remove('hidden');
@@ -513,9 +346,8 @@ const questionsJson = JSON.stringify(allQuestions);
       // Opis
       ctx.fillStyle = '#374151';
       ctx.font = '20px Arial';
-      ctx.fillText('pomyślnie ukończył/ukończyła kurs podstaw sztucznej inteligencji', 600, 450);
-      ctx.fillText('uzyskując 100% poprawnych odpowiedzi w teście końcowym', 600, 480);
-      
+      ctx.fillText('pomyślnie ukończył/ukończyła kurs podstaw sztucznej inteligencji.', 600, 450);
+
       // Data
       const currentDate = new Date().toLocaleDateString('pl-PL', {
         year: 'numeric',
@@ -524,12 +356,12 @@ const questionsJson = JSON.stringify(allQuestions);
       });
       ctx.fillStyle = '#6b7280';
       ctx.font = '18px Arial';
-      ctx.fillText(`${currentDate}`, 600, 580);
+      ctx.fillText(`${currentDate}`, 600, 520);
       
       // Podpis
       ctx.fillStyle = '#059669';
       ctx.font = 'italic 16px Arial';
-      ctx.fillText('AI dla Zielonych - Kurs podstaw sztucznej inteligencji', 600, 650);
+      ctx.fillText('AI dla Zielonych - Kurs podstaw sztucznej inteligencji', 600, 590);
       
       // Unikalne ID certyfikatu
       const certificateId = 'AZ-' + Date.now().toString(36).toUpperCase();
@@ -586,6 +418,5 @@ const questionsJson = JSON.stringify(allQuestions);
         generateBtn.addEventListener('click', generateCertificate);
       }
     });
-    */
   </script>
 </Layout>

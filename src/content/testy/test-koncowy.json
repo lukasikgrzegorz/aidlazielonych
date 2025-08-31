@@ -1,0 +1,688 @@
+{
+  "title": "Test końcowy - AI dla Zielonych",
+  "description": "Sprawdź swoją wiedzę o sztucznej inteligencji i otrzymaj certyfikat ukończenia kursu.",
+  "questions": [
+  {
+    "id": 1,
+    "question": "Kto ukuł słowo 'robot' w 1921 roku?",
+    "options": [
+      "Alan Turing",
+      "Karel Čapek",
+      "John McCarthy",
+      "Isaac Asimov"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 2,
+    "question": "Co to jest Test Turinga?",
+    "options": [
+      "Test wydajności komputera",
+      "Test w którym maszyna miała udawać człowieka w rozmowie",
+      "Test programowania",
+      "Test szybkości przetwarzania danych"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "question": "Jak nazywał się pierwszy prosty chatbot, który udawał psychoterapeutę?",
+    "options": [
+      "ALICE",
+      "WATSON",
+      "ELIZA",
+      "SIRI"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 4,
+    "question": "Co spowodowało 'zimy AI' w latach 70. i 80.?",
+    "options": [
+      "Brak komputerów",
+      "Droga technologia i zbyt wysokie oczekiwania społeczne",
+      "Niechęć naukowców",
+      "Problemy z internetem"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 5,
+    "question": "Który komputer pokonał Gariego Kasparova w szachach w 1997 roku?",
+    "options": [
+      "IBM Watson",
+      "IBM Deep Blue",
+      "AlphaGo",
+      "HAL 9000"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 6,
+    "question": "Dlaczego pokonanie mistrzów gry w Go przez AlphaGo było większym osiągnięciem niż zwycięstwo w szachach?",
+    "options": [
+      "Go jest starszą grą",
+      "Go jest o wiele bardziej złożone niż szachy",
+      "Go ma więcej zasad",
+      "W Go gra więcej osób"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 7,
+    "question": "Jakie są dwie kluczowe cechy definiujące sztuczną inteligencję według lekcji?",
+    "options": [
+      "Szybkość i precyzja",
+      "Autonomia i zdolność do adaptacji",
+      "Pamięć i logika",
+      "Intuicja i kreatywność"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 9,
+    "question": "Który z poniższych NIE jest przykładem AI w codziennym życiu wymienioym w lekcji?",
+    "options": [
+      "Asystenci głosowi jak Siri i Alexa",
+      "Systemy rekomendacji Netflix",
+      "Rozpoznawanie twarzy w telefonie",
+      "Zwykły kalkulator"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 10,
+    "question": "Co to jest 'emergencja' w kontekście Dużych Modeli Językowych (LLM)?",
+    "options": [
+      "Błąd w działaniu modelu",
+      "Pojawianie się zachowań, których nie było w mniejszych wersjach modeli",
+      "Proces uczenia modelu",
+      "Metoda trenowania AI"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 11,
+    "question": "Na jakiej zasadzie działają duże modele językowe (LLM)?",
+    "options": [
+      "Analizują gramatykę tekstu",
+      "Przewidują kolejne słowo w zdaniu",
+      "Tłumaczą wszystko na język angielski",
+      "Zapamiętują całe zdania"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "question": "Co to jest 'waga' w kontekście sieci neuronowych?",
+    "options": [
+      "Ilość danych do przetworzenia",
+      "Szybkość działania neuronu",
+      "Wartość decydująca o sile wpływu jednego neuronu na drugi",
+      "Rozmiar pliku modelu"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 13,
+    "question": "Jak nazywa się proces zamiany tekstu na liczby w LLM?",
+    "options": [
+      "Kompresja",
+      "Tokenizacja",
+      "Szyfrowanie",
+      "Archiwizacja"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 15,
+    "question": "Co to jest embedding w kontekście LLM?",
+    "options": [
+      "Proces uczenia modelu",
+      "Wektor liczb reprezentujący znaczenie i kontekst słowa",
+      "Błąd w działaniu modelu",
+      "Metoda kompresji tekstu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 16,
+    "question": "Jak wpływa wysoka wartość parametru Temperature na odpowiedzi LLM?",
+    "options": [
+      "Zwiększa szybkość odpowiedzi",
+      "Zmniejsza liczbę tokenów",
+      "Zwiększa kreatywność i losowość odpowiedzi",
+      "Skraca długość odpowiedzi"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 18,
+    "question": "Co oznacza, że odpowiedzi LLM są 'niedeterministyczne'?",
+    "options": [
+      "Zawsze dają tę samą odpowiedź",
+      "Nie można ich przewidzieć matematycznie",
+      "To samo zapytanie może dać różne odpowiedzi",
+      "Są zawsze niepoprawne"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 19,
+    "question": "Jak nazywa się instrukcja tekstowa wysyłana do modelu LLM?",
+    "options": [
+      "Komenda",
+      "Query",
+      "Prompt",
+      "Request"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 20,
+    "question": "Dlaczego nie wiemy dokładnie, co dzieje się wewnątrz sieci neuronowej?",
+    "options": [
+      "Jest to tajemnica handlowa",
+      "Proces jest zbyt szybki do obserwacji",
+      "Złożoność interakcji między neuronami jest trudna do śledzenia",
+      "Brakuje odpowiednich narzędzi pomiarowych"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 21,
+    "question": "Które z poniższych NIE jest jednym z czterech filarów dobrego promptu?",
+    "options": [
+      "Persona (Rola)",
+      "Zadanie (Instrukcja)",
+      "Szybkość odpowiedzi",
+      "Format odpowiedzi i przykłady"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 22,
+    "question": "Co oznacza nadanie AI 'persony' w prompcie?",
+    "options": [
+      "Określenie imienia dla AI",
+      "Wcielenie AI w konkretną rolę lub specjalizację",
+      "Ustawienie języka odpowiedzi",
+      "Określenie długości odpowiedzi"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 23,
+    "question": "Dlaczego ważne jest dostarczenie kontekstu w prompcie?",
+    "options": [
+      "AI nie czyta w myślach i nie zna sytuacji użytkownika",
+      "Sprawia, że odpowiedź jest dłuższa",
+      "Przyspiesza generowanie odpowiedzi",
+      "Zmniejsza zużycie tokenów"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 24,
+    "question": "Co to jest technika 'Chain of Thought' (myśl krok po kroku)?",
+    "options": [
+      "Metoda trenowania AI",
+      "Prośba do AI o pokazanie procesu rozumowania przed podaniem odpowiedzi",
+      "Sposób na skrócenie promptu",
+      "Technika zwiększania szybkości odpowiedzi"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 25,
+    "question": "Jaka jest różnica między promptowaniem 'Zero-Shot' a 'Few-Shot'?",
+    "options": [
+      "Zero-Shot używa krótszych promptów",
+      "Zero-Shot to zadanie bez przykładów, Few-Shot pokazuje kilka wzorców",
+      "Zero-Shot działa szybciej",
+      "Few-Shot używa więcej tokenów"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 26,
+    "question": "Jak można poprawić jakość odpowiedzi AI za pomocą techniki autorefleksji?",
+    "options": [
+      "Prosząc AI o sprawdzenie własnej odpowiedzi",
+      "Używając krótszych promptów",
+      "Zwiększając temperaturę modelu",
+      "Powtarzając to samo pytanie wielokrotnie"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 27,
+    "question": "Na czym polega technika 'odwróconych instrukcji'?",
+    "options": [
+      "Pisanie promptów od końca",
+      "Prośba do AI o zadawanie pytań zamiast od razu udzielania odpowiedzi",
+      "Używanie negatywnych przykładów",
+      "Odwracanie kolejności słów w prompcie"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 28,
+    "question": "Co to są halucynacje AI?",
+    "options": [
+      "Błędy w kodzie AI",
+      "Generowanie informacji, które wydają się prawdopodobne, ale są nieprawdziwe",
+      "Zbyt szybkie odpowiedzi",
+      "Problemy z rozumieniem języka"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 29,
+    "question": "Dlaczego należy zawsze weryfikować odpowiedzi AI, szczególnie dotyczące faktów?",
+    "options": [
+      "AI może generować halucynacje - informacje nieprawdziwe ale prawdopodobne",
+      "AI zawsze się myli",
+      "AI nie zna najnowszych informacji",
+      "AI preferuje język angielski"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 31,
+    "question": "Jaka jest główna różnica między nowoczesnym chatbotem a asystentem AI?",
+    "options": [
+      "Chatbot jest szybszy w odpowiedziach",
+      "Asystent ma stałe polecenie systemowe i specjalizuje się w konkretnych zadaniach",
+      "Chatbot używa więcej tokenów",
+      "Asystent działa tylko offline"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 38,
+    "question": "Która z poniższych NIE jest kluczową cechą agenta AI?",
+    "options": [
+      "Autonomia",
+      "Planowanie i celowość",
+      "Działanie w realnym świecie",
+      "Generowanie tekstu"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 39,
+    "question": "Co to jest API w kontekście agentów AI?",
+    "options": [
+      "Typ modelu językowego",
+      "Interfejs programowania aplikacji - 'kelner' między aplikacjami",
+      "Metoda trenowania AI",
+      "Sposób na zwiększenie szybkości"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 40,
+    "question": "Dlaczego API jest tak ważne dla agentów AI?",
+    "options": [
+      "Zwiększa szybkość myślenia",
+      "Daje agentowi 'ręce' do podejmowania konkretnych akcji w realnym świecie",
+      "Redukuje koszty działania",
+      "Poprawia jakość generowanego tekstu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 41,
+    "question": "Jakie są dwa główne sposoby generowania obrazów przez AI?",
+    "options": [
+      "Text-to-image i Image-to-image",
+      "Fast-render i Slow-render",
+      "Low-quality i High-quality",
+      "Simple i Complex"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 42,
+    "question": "Co oznacza 'Text-to-image' w generowaniu obrazów AI?",
+    "options": [
+      "Przekształcanie obrazów w tekst",
+      "Opisujesz słowami co chcesz zobaczyć, AI tworzy obraz od zera",
+      "Tłumaczenie napisów na obrazach",
+      "Dodawanie tekstu do istniejących obrazów"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 45,
+    "question": "Co musisz uwzględnić w prompcie do generowania wideo oprócz statycznej sceny?",
+    "options": [
+      "Tylko kolory",
+      "Choreografię ruchu i dynamikę kamery",
+      "Tylko dźwięk",
+      "Tylko długość filmu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 47,
+    "question": "Co to jest 'vibecoding' w kontekście generowania kodu przez AI?",
+    "options": [
+      "Metoda debugowania kodu",
+      "Proces pisania kodu przez AI na podstawie opisów w języku naturalnym",
+      "Technika optymalizacji wydajności",
+      "Sposób na testowanie aplikacji"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 49,
+    "question": "Dlaczego w promptach muzycznych należy unikać nazwisk prawdziwych artystów?",
+    "options": [
+      "AI nie zna muzyki",
+      "Większość narzędzi to odrzuci ze względu na prawa autorskie",
+      "To spowalnia generowanie",
+      "AI preferuje muzykę klasyczną"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 52,
+    "question": "Co to jest Knowledge Cut (cutoff) w kontekście modeli AI?",
+    "options": [
+      "Metoda ograniczania odpowiedzi",
+      "Określona data, do której model AI został wytrenowany",
+      "Sposób na przyspieszenie działania modelu",
+      "Technika redukcji halucynacji"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 53,
+    "question": "Dlaczego model AI z knowledge cut z kwietnia 2024 nie będzie wiedział o wydarzeniach z maja 2024?",
+    "options": [
+      "Model został uszkodzony",
+      "To błąd w programowaniu",
+      "Model nie posiada informacji o wydarzeniach po dacie knowledge cut",
+      "Model zapomniał wcześniejsze informacje"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 55,
+    "question": "W jakich sytuacjach halucynacje AI mogą być pozytywne?",
+    "options": [
+      "Przy weryfikacji faktów medycznych",
+      "W dziedzinach kreatywnych jak pisanie opowieści czy burza mózgów",
+      "Przy sprawdzaniu dat historycznych",
+      "W analizie danych finansowych"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 57,
+    "question": "Co to jest Web Search w kontekście rozwiązań problemu halucynacji?",
+    "options": [
+      "Metoda trenowania modeli",
+      "Wyszukiwanie informacji w internecie w czasie rzeczywistym przez chatboty",
+      "Sposób na przyspieszenie odpowiedzi",
+      "Technika kompresji danych"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 58,
+    "question": "Jaka jest główna wada Web Search jako rozwiązania problemu halucynacji?",
+    "options": [
+      "Jest zbyt wolny",
+      "Nie działa w trybie offline",
+      "Może zwracać nierzetelne źródła i nie zawsze znajduje właściwe informacje",
+      "Zużywa zbyt dużo pamięci"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 59,
+    "question": "Co oznacza skrót RAG w kontekście AI?",
+    "options": [
+      "Random Access Generation",
+      "Retrieval Augmented Generation",
+      "Rapid AI Growth",
+      "Real-time Answer Generation"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 61,
+    "question": "Czym są lokalne LLM-y?",
+    "options": [
+      "Modele językowe działające tylko w chmurze",
+      "Modele językowe uruchamiane bezpośrednio na komputerze użytkownika bez przesyłania danych do zewnętrznych serwerów",
+      "Programy do tłumaczenia tekstu",
+      "Aplikacje mobilne do nauki języków"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 62,
+    "question": "Dlaczego lokalne LLM-y są szczególnie ważne przy pracy z danymi wrażliwymi?",
+    "options": [
+      "Są szybsze w działaniu",
+      "Zapewniają pełną prywatność i kontrolę nad przepływem informacji bez opuszczania organizacji",
+      "Mają lepszą jakość odpowiedzi",
+      "Są tańsze w użytkowaniu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 65,
+    "question": "Co to jest kwantyzacja w kontekście modeli AI?",
+    "options": [
+      "Proces zwiększania rozmiaru modelu",
+      "Technika zmniejszania rozmiaru modelu poprzez obniżenie precyzji reprezentowanych liczb",
+      "Metoda trenowania nowych modeli",
+      "Sposób na zwiększenie szybkości internetu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 71,
+    "question": "Co to jest API w kontekście modeli AI?",
+    "options": [
+      "Aplikacja do tworzenia grafik",
+      "\"Most\" między aplikacją a usługą zewnętrzną, umożliwiający integrację AI",
+      "Program antywirusowy",
+      "System operacyjny dla AI"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 72,
+    "question": "Jaka jest podstawowa różnica między wersją webową ChatGPT a API?",
+    "options": [
+      "API jest szybsze",
+      "Wersja webowa to gotowa aplikacja z interfejsem, API to surowy dostęp do modelu",
+      "API ma lepszą jakość odpowiedzi",
+      "Wersja webowa działa tylko w przeglądarce Chrome"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 73,
+    "question": "Na podstawie czego rozliczane jest użycie API modeli AI?",
+    "options": [
+      "Liczby zadanych pytań",
+      "Czasu korzystania z usługi",
+      "Liczby tokenów przetworzonych w zapytaniu i odpowiedzi",
+      "Liczby użytkowników aplikacji"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 74,
+    "question": "Co może być tokenem w kontekście modeli AI?",
+    "options": [
+      "Tylko całe słowa",
+      "Całe słowa, części słów lub znaki interpunkcyjne",
+      "Tylko znaki interpunkcyjne",
+      "Tylko liczby"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 75,
+    "question": "Dlaczego odpowiedzi z wersji webowej mogą różnić się od odpowiedzi z API?",
+    "options": [
+      "API ma gorsze modele",
+      "Różne system prompty, parametry generowania i dodatkowe narzędzia w wersji web",
+      "Wersja webowa ma szybszy internet",
+      "API nie ma dostępu do internetu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 76,
+    "question": "Co to jest 'Shadow AI'?",
+    "options": [
+      "Nowy model AI od OpenAI",
+      "Korzystanie z narzędzi AI przez pracowników bez wiedzy działu IT",
+      "AI działające w trybie incognito",
+      "Czarna wersja interfejsu AI"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 77,
+    "question": "Jakie są potencjalne zagrożenia związane z 'Shadow AI'?",
+    "options": [
+      "Zwiększone koszty elektryczności",
+      "Wyciek poufnych danych i naruszenie przepisów o ochronie danych",
+      "Wolniejsze działanie komputerów",
+      "Problemy z instalacją oprogramowania"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 80,
+    "question": "W którym aspekcie API różni się od wersji webowej pod względem kosztów?",
+    "options": [
+      "API ma stałą subskrypcję miesięczną",
+      "API jest zawsze bezpłatne",
+      "API rozlicza się za tokeny, wersja web ma stałą subskrypcję",
+      "API jest droższe dla firm"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 81,
+    "question": "Czym różnią się projekty AI od klasycznych projektów IT?",
+    "options": [
+      "Projekty AI są droższe w realizacji",
+      "Projekty AI mają deterministyczny charakter, projekty IT - probabilistyczny",
+      "Projekty AI mają probabilistyczny charakter i wymagają podejścia eksperymentalnego",
+      "Projekty AI używają tylko języka Python"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 85,
+    "question": "Co to jest 'siatka bezpieczeństwa' w kontekście wdrażania AI?",
+    "options": [
+      "Zabezpieczenie przed hakerami",
+      "System decydujący czy model jest wystarczająco dobry do bezpośredniej interakcji z użytkownikiem",
+      "Kopia zapasowa danych",
+      "Firewall dla aplikacji AI"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 88,
+    "question": "Dlaczego zespoły Data Science powinny pracować blisko biznesu?",
+    "options": [
+      "Żeby oszczędzać na kosztach biurowych",
+      "Żeby rozumieć realia organizacji i definiować właściwe cele",
+      "Żeby szybciej dostarczać kod",
+      "Żeby kontrolować budżet projektu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 89,
+    "question": "Co oznacza MVP w kontekście modeli AI?",
+    "options": [
+      "Most Valuable Player",
+      "Maximum Value Product",
+      "Minimum Viable Model",
+      "Machine Vision Protocol"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 90,
+    "question": "Dlaczego modele AI wymagają ciągłego monitorowania po wdrożeniu?",
+    "options": [
+      "Modele mają tendencję do degeneracji w czasie",
+      "Modele zużywają coraz więcej pamięci",
+      "Modele automatycznie się usuwają",
+      "Modele przestają działać po miesiącu"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 91,
+    "question": "Co to jest AI Governance?",
+    "options": [
+      "Nowy model sztucznej inteligencji",
+      "Polityka zarządzania AI w firmie zapewniająca odpowiedzialne wykorzystanie",
+      "Aplikacja do monitorowania systemów AI",
+      "Rządowy urząd nadzorujący AI"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 93,
+    "question": "Jak AI Act klasyfikuje systemy AI pod względem ryzyka?",
+    "options": [
+      "Niskie, średnie, wysokie",
+      "Bezpieczne, ryzykowne, niebezpieczne",
+      "Minimalne, ograniczone, wysokie, niedopuszczalne",
+      "Podstawowe, zaawansowane, eksperckie"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 94,
+    "question": "Które systemy AI są całkowicie zakazane według AI Act?",
+    "options": [
+      "Systemy wysokiego ryzyka",
+      "Systemy o ryzyku niedopuszczalnym (np. manipulacja zachowaniem)",
+      "Wszystkie systemy komercyjne",
+      "Systemy używane w edukacji"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 96,
+    "question": "Dlaczego bias (stronniczość) w algorytmach AI jest problemem etycznym?",
+    "options": [
+      "Spowalnia działanie systemów",
+      "Algorytmy mogą powielać istniejące uprzedzenia",
+      "Zwiększa koszty utrzymania",
+      "Utrudnia aktualizacje oprogramowania"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 97,
+    "question": "Które regulacje prawne są kluczowe dla AI w Europie według lekcji?",
+    "options": [
+      "Tylko AI Act",
+      "AI Act, RODO i prawa autorskie",
+      "Tylko RODO",
+      "AI Act i prawo karne"
+    ],
+    "correct": 1
+  }
+  ]
+}
