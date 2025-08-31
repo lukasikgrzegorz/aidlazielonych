@@ -311,17 +311,6 @@
     "correct": 3
   },
   {
-    "id": 39,
-    "question": "Co to jest API w kontekście agentów AI?",
-    "options": [
-      "Typ modelu językowego",
-      "Interfejs programowania aplikacji - 'kelner' między aplikacjami",
-      "Metoda trenowania AI",
-      "Sposób na zwiększenie szybkości"
-    ],
-    "correct": 1
-  },
-  {
     "id": 40,
     "question": "Dlaczego API jest tak ważne dla agentów AI?",
     "options": [
@@ -444,7 +433,7 @@
   },
   {
     "id": 59,
-    "question": "Co oznacza skrót RAG w kontekście AI?",
+    "question": "Co oznacza skrót RAG?",
     "options": [
       "Random Access Generation",
       "Retrieval Augmented Generation",
@@ -488,7 +477,7 @@
   },
   {
     "id": 71,
-    "question": "Co to jest API w kontekście modeli AI?",
+    "question": "Co to jest API?",
     "options": [
       "Aplikacja do tworzenia grafik",
       "\"Most\" między aplikacją a usługą zewnętrzną, umożliwiający integrację AI",
@@ -531,17 +520,6 @@
     "correct": 1
   },
   {
-    "id": 75,
-    "question": "Dlaczego odpowiedzi z wersji webowej mogą różnić się od odpowiedzi z API?",
-    "options": [
-      "API ma gorsze modele",
-      "Różne system prompty, parametry generowania i dodatkowe narzędzia w wersji web",
-      "Wersja webowa ma szybszy internet",
-      "API nie ma dostępu do internetu"
-    ],
-    "correct": 1
-  },
-  {
     "id": 76,
     "question": "Co to jest 'Shadow AI'?",
     "options": [
@@ -562,17 +540,6 @@
       "Problemy z instalacją oprogramowania"
     ],
     "correct": 1
-  },
-  {
-    "id": 80,
-    "question": "W którym aspekcie API różni się od wersji webowej pod względem kosztów?",
-    "options": [
-      "API ma stałą subskrypcję miesięczną",
-      "API jest zawsze bezpłatne",
-      "API rozlicza się za tokeny, wersja web ma stałą subskrypcję",
-      "API jest droższe dla firm"
-    ],
-    "correct": 2
   },
   {
     "id": 81,
@@ -609,7 +576,7 @@
   },
   {
     "id": 89,
-    "question": "Co oznacza MVP w kontekście modeli AI?",
+    "question": "Co oznacza MVP?",
     "options": [
       "Most Valuable Player",
       "Maximum Value Product",
