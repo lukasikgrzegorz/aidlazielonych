@@ -13,7 +13,7 @@ npm run dev
 
 Projekt automatycznie deployuje się na GitHub Pages przy każdym push do branch `main`.
 
-URL produkcyjny: https://lukasikgrzegorz.github.io/aidlazielonych/
+URL produkcyjny: https://aidlazielony.ch
 
 ### Ręczny deployment lokalny
 ```bash
@@ -27,6 +27,7 @@ src/
 ├── components/          # Komponenty wielokrotnego użytku
 ├── content/
 │   └── lekcje/         # Lekcje w formacie Markdown
+│   └── testy/          # Testy w formacie JSON
 ├── layouts/            # Layouty stron
 ├── pages/              # Strony aplikacji
 │   ├── index.astro     # Strona główna
@@ -42,7 +43,6 @@ src/
 - ✅ **Generowanie certyfikatu PDF** po zaliczeniu
 - ✅ **Zero cookies** - brak śledzenia użytkowników
 - ✅ **Responsywny design** z Tailwind CSS
-- ✅ **Optymalizacja SEO**
 
 ## 🛠️ Technologie
 

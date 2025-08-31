@@ -76,41 +76,97 @@ import { createUrl } from '../utils/url';
     <!-- Course Content Preview -->
     <section class="bg-white rounded-xl p-8 shadow-md border border-emerald-100">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Co nauczysz się w tym kursie?</h2>
-      <div class="grid md:grid-cols-2 gap-6">
+      
+      <!-- Mobile: Single column list -->
+      <div class="lg:hidden">
         <ul class="space-y-3">
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Czym jest sztuczna inteligencja</span>
+            <span class="text-gray-700">Czym jest sztuczna inteligencja?</span>
           </li>
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Historia rozwoju AI</span>
+            <span class="text-gray-700">Jak działają duże modele językowe?</span>
           </li>
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Rodzaje i typy AI</span>
+            <span class="text-gray-700">Jak rozmawiać z AI?</span>
           </li>
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Lokalny LLM</span>
+            <span class="text-gray-700">Czym są chatboty, asystenci i agenty?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jak AI tworzy grafikę, wideo, dźwięk i kod?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Czym są halucynacje AI?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jak uruchomić lokalny LLM?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Czym jest API?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jak wdrażać i testować rozwiązania AI?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jakie są zagadnienia prawa i etyki AI?</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Desktop: Two columns -->
+      <div class="hidden lg:grid lg:grid-cols-2 gap-6">
+        <ul class="space-y-3">
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Czym jest sztuczna inteligencja?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jak działają duże modele językowe?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jak rozmawiać z AI?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Czym są chatboty, asystenci i agenty?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jak AI tworzy grafikę, wideo, dźwięk i kod?</span>
           </li>
         </ul>
         <ul class="space-y-3">
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Zastosowania AI w życiu</span>
+            <span class="text-gray-700">Czym są halucynacje AI?</span>
           </li>
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Etyka i bezpieczeństwo AI</span>
+            <span class="text-gray-700">Jak uruchomić lokalny LLM?</span>
           </li>
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Przyszłość sztucznej inteligencji</span>
+            <span class="text-gray-700">Czym jest API?</span>
           </li>
           <li class="flex items-start space-x-3">
             <span class="text-emerald-500 mt-1">✓</span>
-            <span class="text-gray-700">Praktyczne zastosowania AI</span>
+            <span class="text-gray-700">Jak wdrażać i testować rozwiązania AI?</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-emerald-500 mt-1">✓</span>
+            <span class="text-gray-700">Jakie są zagadnienia prawa i etyki AI?</span>
           </li>
         </ul>
       </div>
