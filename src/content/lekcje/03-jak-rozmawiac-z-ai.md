@@ -2,7 +2,7 @@
 title: "Jak rozmawiać z AI?"
 description: "Naucz się tworzyć skuteczne prompty i odkryj cztery filary dobrej komunikacji z AI"
 order: 3
-duration: "12 min"
+duration: "15 min"
 tags: ["prompt", "komunikacja", "ai", "instrukcje"]
 published: true
 ---

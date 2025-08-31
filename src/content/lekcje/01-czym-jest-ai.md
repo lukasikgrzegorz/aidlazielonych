@@ -2,7 +2,7 @@
 title: "Czym jest sztuczna inteligencja?"
 description: "Krótka historia AI, definicje oraz przykłady zastosowań w codziennym życiu"
 order: 1
-duration: "10 min"
+duration: "5 min"
 tags: ["podstawy", "definicje", "historia", "genai", "llm"]
 published: true
 ---

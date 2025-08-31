@@ -2,7 +2,7 @@
 title: "API"
 description: "Czym jest API i dlaczego warto je sprawdzić w przypadku LLM"
 order: 8
-duration: "20 min"
+duration: "8 min"
 tags: ["api", "integracja", "tokeny", "shadow ai", "automatyzacja"]
 published: true
 ---

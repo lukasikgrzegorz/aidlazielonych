@@ -2,7 +2,7 @@
 title: "Halucynacje AI"
 description: "Dlaczego sztuczna inteligencja czasami wymyśla fakty i jak się przed tym chronić"
 order: 6
-duration: "20 min"
+duration: "5 min"
 tags: ["halucynacje", "faktyczność", "weryfikacja", "knowledge cut", "rag", "web search"]
 published: true
 ---

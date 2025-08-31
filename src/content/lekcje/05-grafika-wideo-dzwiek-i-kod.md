@@ -2,7 +2,7 @@
 title: "Grafika, wideo, dźwięk i kod"
 description: "Generowanie treści innych niż tekst za pomocą AI"
 order: 5
-duration: "15 min"
+duration: "11 min"
 tags: ["generowanie obrazów", "generowanie wideo", "generowanie muzyki", "generowanie kodu"]
 published: true
 ---

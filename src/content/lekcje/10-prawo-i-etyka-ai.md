@@ -2,7 +2,7 @@
 title: "Prawo i etyka AI"
 description: "Fundamenty odpowiedzialnego korzystania z AI - regulacje prawne, zasady etyczne i praktyczne wskazówki"
 order: 10
-duration: "25 min"
+duration: "10 min"
 tags: ["prawo", "etyka", "AI Act", "RODO", "governance", "bezpieczeństwo", "odpowiedzialność"]
 published: true
 ---

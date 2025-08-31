@@ -2,7 +2,7 @@
 title: "Jak działają duże modele językowe"
 description: "Poznaj podstawy działania LLM-ów: sieci neuronowe, tokeny, embeddingi i parametry sterujące"
 order: 2
-duration: "15 min"
+duration: "7 min"
 tags: ["LLM", "sieci-neuronowe", "tokeny", "embedding", "parametry"]
 published: true
 ---

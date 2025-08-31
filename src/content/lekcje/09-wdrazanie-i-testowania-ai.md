@@ -2,7 +2,7 @@
 title: "Wdrażanie i testowanie AI"
 description: "Jak skutecznie wdrażać projekty AI w organizacji - od definicji problemu po monitorowanie"
 order: 9
-duration: "25 min"
+duration: "9 min"
 tags: ["wdrażanie", "testowanie", "projekty AI", "MVP", "monitoring", "feedback", "ROI"]
 published: true
 ---

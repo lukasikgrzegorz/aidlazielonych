@@ -2,7 +2,7 @@
 title: "Lokalny LLM"
 description: "Jak uruchomić własny model językowy bez korzystania z chmury"
 order: 7
-duration: "20 min"
+duration: "10 min"
 tags: ["lokalny llm", "ollama", "prywatność", "offline ai", "kwantyzacja"]
 published: true
 ---
