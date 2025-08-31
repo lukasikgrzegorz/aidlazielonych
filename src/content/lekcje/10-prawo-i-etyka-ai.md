@@ -1,6 +1,6 @@
 ---
 title: "Prawo i etyka AI"
-description:  "Fundamenty odPrzejrzystość i wyjaśnialność - systemy AI powinny być zrozumiałeowiedzialnego korzystania z AI - regulacje prawne, zasady etyczne i praktyczne wskazówki"
+description: "Fundamenty odpowiedzialnego korzystania z AI - regulacje prawne, zasady etyczne i praktyczne wskazówki"
 order: 10
 duration: "25 min"
 tags: ["prawo", "etyka", "AI Act", "RODO", "governance", "bezpieczeństwo", "odpowiedzialność"]
@@ -76,12 +76,6 @@ Krajobraz prawny dotyczący AI dynamicznie się rozwija. Kluczowe europejskie re
 
 ---
 
-##  📚 Prawa autorskie vs AI:
-
-Kwestie własności treści wygenerowanej przez AI są nadal przedmiotem debat. Uwaga na warunki korzystania z narzędzi AI, niektóre mogą „przejmować” prawa do tworzonych treści.
-
----
-
 ## 🛠️ Praktyczne wskazówki dla pracownika i organizacji
 
 **Jak korzystać z AI odpowiedzialnie i zgodnie z prawem?**
@@ -95,8 +89,6 @@ Kwestie własności treści wygenerowanej przez AI są nadal przedmiotem debat. 
 - 🔒 Anonimizuj dane, jeśli to możliwe
 - 📋 Przestrzegaj firmowych wytycznych
 - ⚖️ Pamiętaj o odpowiedzialności za szkody wynikające z niewłaściwego użycia AI
-
-> 🛡️ **Polityka AI** to system ochronny: chroni dane, zapewnia zgodność z RODO i ogranicza ryzyka związane z błędami, biasem czy niezamierzonymi skutkami.### 🧪 Innowacja w bezpiecznych warunkach - sandboxy
 
 Unijne ramy prawne i etyczne wspierają m.in. koncepcję **sandboxów** - środowisk testowych, w których można eksperymentować z AI pod kontrolą.
 
