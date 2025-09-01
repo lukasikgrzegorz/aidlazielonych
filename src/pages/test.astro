@@ -39,7 +39,7 @@ const questionsJson = JSON.stringify(allQuestions);
             <li>• Do zaliczenia wymagane jest 100% poprawnych odpowiedzi</li>
             <li>• Możesz podejść do testu wielokrotnie</li>
             <li>• Wynik zostanie pokazany natychmiast po zakończeniu</li>
-            <li>• Po zaliczeniu będziesz mógł pobrać certyfikat PDF</li>
+            <li>• Po zaliczeniu będziesz mógł pobrać certyfikat</li>
           </ul>
         </div>
       </div>
@@ -389,7 +389,7 @@ const questionsJson = JSON.stringify(allQuestions);
         if (generateBtn) {
           generateBtn.textContent = '✅ Certyfikat pobrany!';
           setTimeout(() => {
-            generateBtn.textContent = '🏆 Wygeneruj certyfikat PDF';
+            generateBtn.textContent = '🏆 Wygeneruj certyfikat';
             generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
           }, 2000);
         }
