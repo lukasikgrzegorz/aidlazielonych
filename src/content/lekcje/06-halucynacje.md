@@ -90,7 +90,7 @@ RAG to technika łączenia AI z bazą sprawdzonych dokumentów. Pozwala to AI ko
 **Jak działa RAG:**
 1. **Przygotowanie bazy:** Zbieramy wiarygodne dokumenty i źródła
 2. **Indeksowanie:** Tworzymy przeszukiwalną bazę wiedzy  
-3. **Wyszukiwanie:** AI szuka w bazie informacji relevant do pytania
+3. **Wyszukiwanie:** AI szuka w bazie informacji istotnych dla pytania
 4. **Generowanie:** Model tworzy odpowiedź na podstawie znalezionych dokumentów
 
 **Korzyści RAG:**
@@ -101,4 +101,4 @@ RAG to technika łączenia AI z bazą sprawdzonych dokumentów. Pozwala to AI ko
 
 ---
 
-Halucynacje to naturalna cecha modeli AI, ale nie musimy się przed nimi bezradnie poddawać. Dzięki odpowiednim technikom weryfikacji, Web Search i RAG możemy znacznie zwiększyć wiarygodność odpowiedzi AI.
+Halucynacje to naturalna cecha modeli AI, ale nie musimy się przed nimi bezradnie poddawać. Dzięki odpowiednim technikom weryfikacji, Web Search i RAG możemy znacznie zwiększyć wiarygodność odpowiedzi AI i korzystać z jego możliwości w bezpieczny sposób.

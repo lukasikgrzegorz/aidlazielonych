@@ -12,10 +12,10 @@ published: true
 ---
 
 ## Krótka historia sztucznej inteligencji
-Marzenie o stworzeniu myślącej maszyny towarzyszy ludziom od dawna. Już na początku XX wieku pojawiały się pierwsze mechaniczne konstrukcje, a w 1921 roku czeski pisarz Karel Čapek ukuł słowo „robot”.
+Marzenie o stworzeniu myślącej maszyny towarzyszy ludziom od dawna. Już na początku XX wieku pojawiały się pierwsze mechaniczne konstrukcje, a w 1921 roku czeski pisarz Karel Čapek ukuł słowo „robot".
 
 ### Rewolucja i wizja (lata 50. i 60.)
-Prawdziwy przełom nastąpił w latach 50. dzięki Alanowi Turingowi. Zaproponował on słynny Test Turinga, w którym maszyna miała udawać człowieka w rozmowie. Niedługo potem powstał termin „sztuczna inteligencja”, a pierwsze programy uczyły się grać w szachy. W tym okresie powstał też prosty chatbot o nazwie ELIZA, który udawał psychoterapeutę. Zręcznie powtarzał frazy, co na początku zachwycało ludzi, ale szybko okazało się, że nie jest w stanie "myśleć" ani "rozumieć".
+Prawdziwy przełom nastąpił w latach 50. dzięki Alanowi Turingowi. Zaproponował on słynny Test Turinga, w którym maszyna miała udawać człowieka w rozmowie. Niedługo potem powstał termin „sztuczna inteligencja", a pierwsze programy uczyły się grać w szachy. W tym okresie powstał też prosty chatbot o nazwie ELIZA, który udawał psychoterapeutę. Zręcznie powtarzał frazy, co na początku zachwycało ludzi, ale szybko okazało się, że nie jest w stanie „myśleć" ani „rozumieć".
 
 ### Zima AI (lata 70. i 80.)
 Mimo początkowego optymizmu, w latach 70. i 80. entuzjazm opadł. Technologia była droga, a oczekiwania społeczne zbyt wysokie. Doprowadziło to do „zimy AI”, czyli okresu gwałtownego spadku finansowania i zainteresowania badaniami.
@@ -44,6 +44,10 @@ Aby to uporządkować, możemy zdefiniować **sztuczną inteligencję** za pomoc
 > - **Zdolność do adaptacji**: Umiejętność poprawiania swoich działań na podstawie zdobytego doświadczenia.
 
 Ważne jest, aby pamiętać, że kiedy mówimy o **AI**, używamy słów takich jak **„uczenie się"** czy **„rozumienie"** w specyficzny sposób. Na przykład, kiedy system nawigacji „inteligentnie" wybiera najlepszą trasę, nie myśli on jak człowiek. Po prostu przetwarza dane i wybiera optymalne rozwiązanie na podstawie zaprogramowanych reguł.
+
+Tak samo, kiedy system do rozpoznawania obrazów **„rozumie"**, co jest na zdjęciu, to nie znaczy, że ma świadomość. On tylko przypisuje etykiety obiektom. Nie ma pojęcia, że jazda po drodze, która jest nadrukiem na koszulce, nie jest dobrym pomysłem.
+
+**Inteligencja AI jest wąska.** W przeciwieństwie do ludzkiej inteligencji, której nie da się zmierzyć za pomocą jednej skali, **AI** jest wyspecjalizowana. Algorytm do gry w szachy nie będzie w stanie napisać maila, a system rekomendacji muzyki nie poprowadzi samochodu. To dlatego pytanie o to, czy jeden system **AI** jest **„bardziej inteligentny"** niż inny, nie ma sensu. Każdy z nich jest stworzony do konkretnego, wąskiego zadania."** czy **„rozumienie"** w specyficzny sposób. Na przykład, kiedy system nawigacji „inteligentnie" wybiera najlepszą trasę, nie myśli on jak człowiek. Po prostu przetwarza dane i wybiera optymalne rozwiązanie na podstawie zaprogramowanych reguł.
 
 Tak samo, kiedy system do rozpoznawania obrazów **„rozumie"**, co jest na zdjęciu, to nie znaczy, że ma świadomość. On tylko przypisuje etykiety obiektom. Nie ma pojęcia, że jazda po drodze, która jest nadrukiem na koszulce, nie jest dobrym pomysłem.
 

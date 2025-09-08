@@ -64,7 +64,7 @@ Dostarczając kluczowe informacje, upewniasz się, że AI nie będzie musiała n
 
 Czasami łatwiej jest coś pokazać, niż opisać słowami. AI doskonale wychwytuje wzorce. Jeśli chcesz, aby odpowiedź miała określoną strukturę (np. tabela, lista, kod JSON), po prostu pokaż jej przykład.
 
-**Przykład JSON:** Chcesz wyciągnąć dane z tekstu i zapisać je w ustrukturyzowany sposób.
+**Przykład JSON:** Chcesz wyciągnąć dane z tekstu i zapisać je w uporządkowany sposób.
 
 > "Wyciągnij z poniższych zdań informacje o produkcie i jego cenie. Odpowiedz, używając wyłącznie formatu JSON.
 > 
@@ -91,11 +91,11 @@ Dzięki przykładom model dokładnie wie, jakiego formatu odpowiedzi oczekujesz.
 
 ## Techniki promptowania
 
-Znasz już cztery filary. Teraz poznajmy kilka technik, które działają jak "dopalacze" dla Twoich poleceń.
+Znasz już cztery filary. Teraz poznajmy kilka technik, które działają jak „dopalacze" dla Twoich poleceń.
 
 ### Myśl kroczek po kroczku (Chain of Thought) 🧠
 
-Jeśli masz skomplikowane zadanie, np. problem logiczny, dodaj do polecenia magiczną frazę: **"Pomyślmy krok po kroku"**. Zamiast od razu podawać ostateczną odpowiedź (przy której łatwo o błąd), model najpierw rozpisze swój tok rozumowania.
+Jeśli masz skomplikowane zadanie, np. problem logiczny, dodaj do polecenia magiczną frazę: **„Pomyślmy krok po kroku"**. Zamiast od razu podawać ostateczną odpowiedź (przy której łatwo o błąd), model najpierw rozpisze swój tok rozumowania.
 
 **Przykład:**
 

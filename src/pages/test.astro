@@ -91,7 +91,7 @@ const questionsJson = JSON.stringify(allQuestions);
                 id="generate-certificate"
                 class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
               >
-                🏆 Wygeneruj certyfikat PDF
+                🏆 Wygeneruj certyfikat
               </button>
             </div>
           </div>
@@ -284,6 +284,10 @@ const questionsJson = JSON.stringify(allQuestions);
       initializeTest();
     }
     
+    /**
+     * Generates a modern, professional certificate using Canvas API
+     * @param {string} name - The recipient's name to display on the certificate
+     */
     function generateCertificate() {
       const nameInput = document.getElementById('certificate-name');
       
@@ -296,93 +300,175 @@ const questionsJson = JSON.stringify(allQuestions);
         return;
       }
       
-      // Generowanie certyfikatu jako obraz Canvas
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       
       if (!ctx) return;
       
-      canvas.width = 1200;
-      canvas.height = 800;
+      canvas.width = 1400;
+      canvas.height = 1000;
       
-      // Gradient tło
-      const gradient = ctx.createLinearGradient(0, 0, 1200, 800);
-      gradient.addColorStop(0, '#f0fdf4');
-      gradient.addColorStop(1, '#ecfdf5');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, 1200, 800);
+      // Modern gradient background with subtle geometric pattern
+      const bgGradient = ctx.createLinearGradient(0, 0, 1400, 1000);
+      bgGradient.addColorStop(0, '#ffffff');
+      bgGradient.addColorStop(0.3, '#f8fafc');
+      bgGradient.addColorStop(0.7, '#f1f5f9');
+      bgGradient.addColorStop(1, '#e2e8f0');
+      ctx.fillStyle = bgGradient;
+      ctx.fillRect(0, 0, 1400, 1000);
       
-      // Ramka
+      // Subtle geometric background pattern
+      ctx.globalAlpha = 0.05;
       ctx.strokeStyle = '#059669';
-      ctx.lineWidth = 8;
-      ctx.strokeRect(40, 40, 1120, 720);
+      ctx.lineWidth = 1;
       
-      // Wewnętrzna ramka
-      ctx.strokeStyle = '#34d399';
+      for (let x = 100; x < 1300; x += 80) {
+        for (let y = 100; y < 900; y += 80) {
+          ctx.beginPath();
+          ctx.arc(x, y, 20, 0, 2 * Math.PI);
+          ctx.stroke();
+        }
+      }
+      ctx.globalAlpha = 1;
+      
+      // Main border with rounded corners
+      const borderRadius = 20;
+      const padding = 50;
+      
+      const borderGradient = ctx.createLinearGradient(0, 0, 1400, 0);
+      borderGradient.addColorStop(0, '#059669');
+      borderGradient.addColorStop(0.5, '#10b981');
+      borderGradient.addColorStop(1, '#34d399');
+      
+      ctx.strokeStyle = borderGradient;
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.roundRect(padding, padding, 1400 - (padding * 2), 1000 - (padding * 2), borderRadius);
+      ctx.stroke();
+      
+      // Inner decorative border
+      ctx.strokeStyle = '#d1fae5';
       ctx.lineWidth = 2;
-      ctx.strokeRect(60, 60, 1080, 680);
+      ctx.beginPath();
+      ctx.roundRect(padding + 15, padding + 15, 1400 - (padding * 2) - 30, 1000 - (padding * 2) - 30, borderRadius - 5);
+      ctx.stroke();
       
-      // Nagłówek
-      ctx.fillStyle = '#065f46';
-      ctx.font = 'bold 48px Arial';
-      ctx.textAlign = 'center';
-      ctx.fillText('🏆 CERTYFIKAT UKOŃCZENIA', 600, 150);
-      
-      // Nazwa kursu
-      ctx.fillStyle = '#059669';
-      ctx.font = 'bold 36px Arial';
-      ctx.fillText('AI DLA ZIELONYCH', 600, 220);
-      
-      // Potwierdzenie
-      ctx.fillStyle = '#374151';
-      ctx.font = '24px Arial';
-      ctx.fillText('Niniejszym poświadcza się, że', 600, 300);
-      
-      // Imię i nazwisko
-      ctx.fillStyle = '#059669';
-      ctx.font = 'bold 42px Arial';
-      ctx.fillText(name.toUpperCase(), 600, 380);
-      
-      // Opis
-      ctx.fillStyle = '#374151';
-      ctx.font = '20px Arial';
-      ctx.fillText('pomyślnie ukończył/ukończyła kurs podstaw sztucznej inteligencji.', 600, 450);
 
-      // Data
+      
+      // Main "CERTYFIKAT" header
+      ctx.fillStyle = '#1f2937';
+      ctx.font = 'bold 84px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText('CERTYFIKAT', 700, 310);
+      
+      // Decorative line under header
+      const lineGradient = ctx.createLinearGradient(425, 335, 975, 335);
+      lineGradient.addColorStop(0, 'transparent');
+      lineGradient.addColorStop(0.1, '#10b981');
+      lineGradient.addColorStop(0.9, '#10b981');
+      lineGradient.addColorStop(1, 'transparent');
+      ctx.strokeStyle = lineGradient;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(425, 335);
+      ctx.lineTo(975, 335);
+      ctx.stroke();
+      
+      // Subtitle
+      ctx.fillStyle = '#059669';
+      ctx.font = 'bold 47px Arial';
+      ctx.fillText('UKOŃCZENIA KURSU', 700, 385);
+      
+      // Course name with gradient effect
+      ctx.save();
+      const titleGradient = ctx.createLinearGradient(0, 425, 0, 485);
+      titleGradient.addColorStop(0, '#065f46');
+      titleGradient.addColorStop(1, '#059669');
+      ctx.fillStyle = titleGradient;
+      ctx.font = 'bold 62px Arial';
+      
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+      ctx.shadowBlur = 4;
+      ctx.shadowOffsetX = 2;
+      ctx.shadowOffsetY = 2;
+      
+      ctx.fillText('AI DLA ZIELONYCH', 700, 465);
+      ctx.restore();
+      
+
+      
+      // Confirmation text
+      ctx.fillStyle = '#64748b';
+      ctx.font = '22px Arial';
+      ctx.fillText('Niniejszym poświadcza się, że', 700, 550);
+      
+      // Name with background box
+      ctx.save();
+      
+      ctx.font = 'bold 36px Arial';
+      const nameWidth = ctx.measureText(name.toUpperCase()).width + 60;
+      
+      const nameBoxGradient = ctx.createLinearGradient(0, 580, 0, 640);
+      nameBoxGradient.addColorStop(0, '#f0fdf4');
+      nameBoxGradient.addColorStop(1, '#dcfce7');
+      ctx.fillStyle = nameBoxGradient;
+      
+      ctx.beginPath();
+      ctx.roundRect(700 - nameWidth / 2, 580, nameWidth, 60, 10);
+      ctx.fill();
+      
+      ctx.strokeStyle = '#10b981';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(700 - nameWidth / 2, 580, nameWidth, 60, 10);
+      ctx.stroke();
+      
+      ctx.fillStyle = '#065f46';
+      ctx.fillText(name.toUpperCase(), 700, 622);
+      ctx.restore();
+      
+      // Achievement description
+      ctx.fillStyle = '#475569';
+      ctx.font = '20px Arial';
+      ctx.fillText('pomyślnie ukończył/ukończyła kurs podstaw sztucznej inteligencji', 700, 700);
+      ctx.fillText('uzyskując wynik 100% w teście końcowym.', 700, 730);
+      
+      // Date only
       const currentDate = new Date().toLocaleDateString('pl-PL', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       });
-      ctx.fillStyle = '#6b7280';
+      
+      ctx.fillStyle = '#64748b';
       ctx.font = '18px Arial';
-      ctx.fillText(`${currentDate}`, 600, 520);
+      ctx.fillText(`${currentDate}`, 700, 820);
       
-      // Podpis
-      ctx.fillStyle = '#059669';
-      ctx.font = 'italic 16px Arial';
-      ctx.fillText('AI dla Zielonych - Kurs podstaw sztucznej inteligencji', 600, 590);
-      
-      // Unikalne ID certyfikatu
+      // Unique certificate ID  
       const certificateId = 'AZ-' + Date.now().toString(36).toUpperCase();
-      ctx.fillStyle = '#9ca3af';
-      ctx.font = '12px Arial';
-      ctx.textAlign = 'right';
-      ctx.fillText(`ID certyfikatu: ${certificateId}`, 1140, 740);
       
-      // Pobieranie certyfikatu
+      ctx.fillStyle = '#f8fafc';
+      ctx.beginPath();
+      ctx.roundRect(100, 900, 300, 30, 5);
+      ctx.fill();
+      
+      ctx.fillStyle = '#64748b';
+      ctx.font = '12px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText(`ID certyfikatu: ${certificateId}`, 100, 920);
+      
+      // Download certificate
       const link = document.createElement('a');
       link.download = `certyfikat-ai-dla-zielonych-${name.replace(/\s+/g, '-').toLowerCase()}.png`;
       link.href = canvas.toDataURL('image/png', 1.0);
       
-      // Dodaj feedback dla użytkownika
       const generateBtn = document.getElementById('generate-certificate');
       if (generateBtn) {
         generateBtn.textContent = '⏳ Generowanie...';
         generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
       }
       
-      // Symulacja krótkiego opóźnienia dla lepszego UX
       setTimeout(() => {
         link.click();
         

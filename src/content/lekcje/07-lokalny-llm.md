@@ -7,7 +7,7 @@ tags: ["lokalny llm", "ollama", "prywatność", "offline ai", "kwantyzacja"]
 published: true
 ---
 
-Jeszcze do niedawna uruchomienie zaawansowanego **modelu językowego** na własnym laptopie wydawało się nierealne. Obecnie, dzięki postępom w rozwoju mniejszych, bardziej zoptymalizowanych modeli oraz narzędzi takich jak **Ollama**, **lokalna sztuczna inteligencja** staje się realną alternatywą dla rozwiązań chmurowych.
+Jeszcze do niedawna uruchomienie zaawansowanego **modelu językowego** na własnym laptopie wydawało się nierealne. Obecnie dzięki postępom w rozwoju mniejszych, bardziej zoptymalizowanych modeli oraz narzędzi takich jak **Ollama**, **lokalna sztuczna inteligencja** staje się realną alternatywą dla rozwiązań chmurowych.
 
 ---
 
@@ -20,7 +20,7 @@ Wiele z tych modeli ma charakter **open-source**, co otwiera możliwości ich do
 ---
 
 ## Dlaczego warto używać lokalnych LLM-ów?
-W przypadku pracy z danymi wrażliwymi, takimi jak dane klientów, informacje medyczne czy dokumenty wewnętrzne to lokalne modele językowe stają się strażnikami tajemnic. Pozwalają zachować pełną prywatność i kontrolę nad przepływem informacji, nie wymagając opuszczania bezpiecznych murów organizacji.
+W przypadku pracy z danymi wrażliwymi, takimi jak dane klientów, informacje medyczne czy dokumenty wewnętrzne, lokalne modele językowe stają się strażnikami tajemnic. Pozwalają zachować pełną prywatność i kontrolę nad przepływem informacji, nie wymagając opuszczania bezpiecznych murów organizacji.
 
 Działając lokalnie, eliminują ryzyko przesyłu danych do zewnętrznych dostawców. To jak tworzenie zaklęć ochronnych wokół najważniejszych artefaktów. Nic nie wydostaje się na zewnątrz, a cała magia dzieje się dokładnie tam, gdzie powinna: w Twoim własnym królestwie danych.
 

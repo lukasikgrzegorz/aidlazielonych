@@ -48,7 +48,7 @@ Tworzenie dobrego prompta to sztuka opisu wizualnego. Wyobraź sobie, że muszis
 #### 2. Zdefiniuj główny motyw
 - "Samotny wędrowiec obserwujący rozległy krajobraz"
 - "Młody twórca malujący wielkoformatowy mural"
-- "Rodzina delektująca się piknkiem w jesiennym parku"
+- "Rodzina delektująca się piknikiem w jesiennym parku"
 
 #### 3. Wzbogać szczegółami
 - Paleta barw: "intensywne błękity nieba", "złociste światło zachodzącego słońca"
@@ -165,7 +165,7 @@ Video to obrazy w dynamice, dlatego musisz opisać nie tylko statyczną scenę, 
 ### Przykłady promptów muzycznych:
 
 **Relaksacyjna:**
-> "Delikatna melodia na harfie z ciuchymi dźwiękami oceanu, medytacyjny i kojący nastrój, bardzo wolne tempo około 50 BPM, odgłosy fal i mew w tle"
+> "Delikatna melodia na harfie z cichymi dźwiękami oceanu, medytacyjny i kojący nastrój, bardzo wolne tempo około 50 BPM, odgłosy fal i mew w tle"
 
 **Energiczna:**
 > "Dynamiczny utwór funk z gitarą basową, perkusją i sekcją dętą, radosny i taneczny nastrój, tempo około 120 BPM, styl lat 70. jak James Brown"

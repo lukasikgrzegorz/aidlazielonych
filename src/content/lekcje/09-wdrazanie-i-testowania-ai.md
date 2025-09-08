@@ -34,7 +34,7 @@ Dlatego zamiast długoterminowych planów (które łatwo mogą się rozsypać pr
 
 ### 1️⃣ Dobrze zdefiniuj problem
 
-To pierwszy i najważniejszy etap. Problem biznesowy, który chcemy rozwiązać za pomocą AI, powinien być jak najbardziej wyizolowany, prosty, a nawet "zero-jedynkowy". Takie problemy są łatwiejsze do rozwiązania dla modelu Machine Learningowego. 
+To pierwszy i najważniejszy etap. Problem biznesowy, który chcemy rozwiązać za pomocą AI, powinien być jak najbardziej wyizolowany, prosty, a nawet "zero-jedynkowy". Takie problemy są łatwiejsze do rozwiązania dla modelu machine learningowego. 
 
 **Dobre problemy dla AI to te, które wymagają:**
 - Rozpoznawania wzorców (np. wykrywanie spamu)

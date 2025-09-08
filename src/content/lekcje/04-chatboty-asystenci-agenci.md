@@ -33,7 +33,7 @@ Jego mocne strony leżą w generowaniu treści, od pisania kreatywnego i redagow
 
 ### Google Gemini: Ogromny kontekst i integracja z ekosystemem
 
-Główną siłą **Google Gemini** jest jego ogromne **okno kontekstowe** oraz głęboka, natywna integracja z całym ekosystemem **Google**. Narzędzie to płynnie współpracuje z aplikacjami takimi jak **Gmail**, **Google Docs** czy **Kalendarz**, co pozwala użytkownikom na wykonywanie zadań bez konieczności przełączania się między programami. 
+Główną siłą **Google Gemini** jest jego ogromne **okno kontekstowe** oraz głęboka, natywna integracja z całym ekosystemem **Google**. Narzędzie to płynnie współpracuje z aplikacjami takimi jak **Gmail**, **Google Docs** czy **Kalendarz Google**, co pozwala użytkownikom na wykonywanie zadań bez konieczności przełączania się między programami. 
 
 Dzięki rozbudowanemu kontekstowi **Gemini** może przetwarzać i analizować bardzo duże ilości danych jednocześnie. Wyróżnia się również swoją **multimodalnością**, co oznacza, że potrafi rozumieć i generować nie tylko tekst, ale także obrazy i analizować zawartość ekranu lub zdjęcia.
 
@@ -41,7 +41,7 @@ Dzięki rozbudowanemu kontekstowi **Gemini** może przetwarzać i analizować ba
 
 ### Anthropic Claude: Programowanie i bezpieczeństwo
 
-**Anthropic Claude** został stworzony z silnym naciskiem na bezpieczeństwo i etykę, co czyni go zaufanym narzędziem do zadań wrażliwych i wymagających dużej precyzji. Szczególnie **świetnie radzi sobie z programowaniem**, oferując wysokiej jakości kod i dokładne wyjaśnienia techniczne. 
+**Anthropic Claude** został stworzony z silnym naciskiem na bezpieczeństwo i etykę, co czyni go zaufanym narzędziem do zadań wrażliwych i wymagających dużej precyzji. Szczególnie **dobrze radzi sobie z programowaniem**, oferując wysokiej jakości kod i dokładne wyjaśnienia techniczne. 
 
 **Claude** stawia na **bezpieczeństwo** jako priorytet, co sprawia, że jest idealny do zadań wymagających głębokiego rozumowania i odpowiedzialnego podejścia do generowania treści, takich jak analiza złożonych raportów finansowych, dokumentów prawniczych, czy tworzenie zaawansowanego, bezpiecznego kodu.
 
@@ -49,7 +49,7 @@ Dzięki rozbudowanemu kontekstowi **Gemini** może przetwarzać i analizować ba
 
 ### Grok: Naukowe zastosowania i badania
 
-**Grok**, opracowany przez **xAI** (firmę Elona Muska), to **świetny model do zastosowań naukowych** i badawczych. Wyróżnia się zdolnością do przetwarzania złożonych problemów naukowych i technicznych, oferując szczegółowe analizy i rozwiązania. 
+**Grok**, opracowany przez **xAI** (firmę Elona Muska), to **doskonały model do zastosowań naukowych** i badawczych. Wyróżnia się zdolnością do przetwarzania złożonych problemów naukowych i technicznych, oferując szczegółowe analizy i rozwiązania. 
 
 **Grok** został zaprojektowany z myślą o wspieraniu badaczy, inżynierów i naukowców w ich codziennej pracy, pomagając w analizie danych badawczych, rozwiązywaniu problemów matematycznych i fizycznych oraz tworzeniu hipotez naukowych. Jego unikalne podejście do przetwarzania informacji czyni go cennym narzędziem w środowisku akademickim i przemysłowym.
 

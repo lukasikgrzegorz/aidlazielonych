@@ -13,7 +13,7 @@ Sztuczna inteligencja (AI) rewolucjonizuje sposób, w jaki działają firmy i wp
 
 ## 🧭 Czym jest AI Governance i dlaczego jest potrzebny?
 
-**AI Governance** to polityka zarządzania sztuczną inteligencją w firmie. Jest to klucz do zapewnienia, że AI jest wykorzystywane w sposób odpowiedzialny, zgodny z regulacjami i bezpieczny dla organizacji, kompleksowy system wytycznych, które prowadzą nas bezpiecznie przez złożone obszary technologii.
+**AI Governance** to polityka zarządzania sztuczną inteligencją w firmie. Jest to klucz do zapewnienia, że AI jest wykorzystywane w sposób odpowiedzialny, zgodny z regulacjami i bezpieczny dla organizacji - kompleksowy system wytycznych, które prowadzą nas bezpiecznie przez złożone obszary technologii.
 
 Firmy potrzebują AI Governance, ponieważ daje ona jasne wytyczne, jak działać w przypadku realizacji inicjatyw z wykorzystaniem AI. Podpowiada, jakie dane można wykorzystywać, w jaki sposób chronić prywatność ludzi, a także jak reagować, gdy coś pójdzie nie tak.
 
@@ -44,7 +44,9 @@ Wyzwania etyczne w AI:
 - Odpowiedzialność za decyzje AI - kto ponosi winę, gdy pojazd autonomiczny spowoduje szkodę? Programista, producent czy użytkownik?
 - Rozpoznawanie twarzy - mimo że zwiększa bezpieczeństwo, może naruszać prywatność, szczególnie gdy dane są używane bez zgody.
 
->💡 **Europejska Deklaracja Praw i Zasad Cyfrowych (2022)** przypomina, że technologia nie może działać kosztem praw człowieka. AI nie może prowadzić do dyskryminacji, naruszać prywatności ani działać w sposób nieprzejrzysty. To zasady, które stanowią etyczny przewodnik 📚.🔮 Kluczowe zasady godnej zaufania AI:
+>💡 **Europejska Deklaracja Praw i Zasad Cyfrowych (2022)** przypomina, że technologia nie może działać kosztem praw człowieka. AI nie może prowadzić do dyskryminacji, naruszać prywatności ani działać w sposób nieprzejrzysty. To zasady, które stanowią etyczny przewodnik 📚.
+
+🔮 Kluczowe zasady godnej zaufania AI:
 >- Ludzka kontrola i nadzór nad AI
 >- Solidność techniczna i bezpieczeństwo
 >- Ochrona prywatności i zarządzanie danymi

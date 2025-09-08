@@ -76,7 +76,7 @@ Dzięki embeddingom model "rozumie" nie tylko to, co słowa znaczą, ale także 
 
 Mimo że znamy ogólne zasady działania LLM-ów, **nie wiemy dokładnie, co dzieje się wewnątrz** sieci neuronowej w danym momencie.
 
-> **Analogia**: To trochę jak oglądanie, jak dziecko uczy się rysować. Widzimy, jak stopniowo poprawia swoje kreski, ale nie wiemy dokładnie, co myśli w danej chwili.
+> **Analogia**: To trochę jak oglądanie, jak dziecko uczy się rysować. Widzimy, jak stopniowo poprawia swoje pociągnięcia, ale nie wiemy dokładnie, co myśli w danej chwili.
 
 Podobnie jest z LLM-ami: wiemy, że ciągłe dostrajanie parametrów prowadzi do coraz lepszych wyników, ale nie jesteśmy w stanie precyzyjnie śledzić, jak ten proces przebiega dla każdej pojedynczej interakcji.
 
